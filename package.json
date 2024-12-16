@@ -1,0 +1,19 @@
+{
+  "name": "group_18_cucumber_pw",
+  "version": "1.0.0",
+  "description": "Group Assignment ITQA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Group_18",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.1.1",
+    "@playwright/test": "^1.49.1",
+    "cucumber-html-reporter": "^7.2.0",
+    "playwright": "^1.49.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
