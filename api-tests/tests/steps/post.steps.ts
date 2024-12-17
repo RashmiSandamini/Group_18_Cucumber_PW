@@ -1,17 +1,29 @@
-import { Given, When, Then, Before, After } from '@cucumber/cucumber';
+import {
+  Given,
+  When,
+  Then,
+  Before,
+  After,
+  DataTable,
+} from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 
 Before(async function () {
   await this.initRequestContext();
 });
 
-Given('I am authorized with {string}', async function (creds) {
+Given('I am authorized with {string} as an admin', async function (creds: string) {
   this.setAuth(creds);
 });
 
+Given('I am authorized with {string} as a user', async function (creds: string) {
+  this.setAuth(creds);
+});
+
+
 When(
   'I send a POST request to {string} with the following JSON body:',
-  async function (path, jsonBody) {
+  async function (path: string, jsonBody: string) {
     const json = JSON.parse(jsonBody);
     this.response = await this.context.post(path, {
       data: json,
@@ -20,15 +32,33 @@ When(
   }
 );
 
-Then('The response status code should be {int}', async function (expResponseCode) {
-  expect(this.response.status()).toBe(expResponseCode);
-});
+When(
+  'I send a POST request to {string} with the following books',
+  async function (path: string, table: DataTable) {
+    const tableData = table.hashes();
+    for (let i = 0; i < tableData.length; i++) {
+      const row = tableData[i];
+      this.response = await this.context.post(path, {
+        data: {
+          title: row.title,
+          author: row.author,
+        },
+        headers: { Authorization: this.auth },
+      });
+    }
+  }
+);
 
-Then('The response body should contain:', async function (expResponseBody) {
+Then(
+  'The response status code should be {int}',
+  async function (expResponseCode: number) {
+    expect(this.response.status()).toBe(expResponseCode);
+  }
+);
+
+Then('The response body should contain {string}', async function (expected: string) {
   const body = await this.response.json();
-  const expected = JSON.parse(expResponseBody);
-  expect(body.title).toBe(expected.title);
-  expect(body.author).toBe(expected.author)
+  expect(body.message).toBe(expected);
 });
 
 After(async function () {
