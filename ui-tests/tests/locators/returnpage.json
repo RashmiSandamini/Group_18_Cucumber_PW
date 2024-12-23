@@ -1,0 +1,8 @@
+{
+  "path": "/index.php?route=account/return/add",
+  "orderIdInput": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@id='input-order-id']",
+    "description": "Order ID input field"
+  }
+}
