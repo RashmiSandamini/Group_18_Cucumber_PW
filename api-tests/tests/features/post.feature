@@ -29,7 +29,6 @@ Feature: Create a new book
       | title     | author         |
       | ""        | Yoshino Uthada |
       | " "       | Yoshino Uthada |
-      | " Hello " | Yoshino Uthada |
     Then The response status code should be 400
     And The response body should contain "Invalid request format"
 

@@ -1,0 +1,13 @@
+{
+  "path": "/index.php?route=account/account",
+  "returnPageButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//a[contains(., 'Return') and @class = 'icon-left both dropdown-item']",
+    "description": "Return page button"
+  },
+  "myAccount": {
+    "locatorOptions": {},
+    "locator": "xpath=//a[contains(., 'My account') and @data-toggle and @class = 'icon-left both nav-link dropdown-toggle']",
+    "description": "My account link"
+  }
+}
