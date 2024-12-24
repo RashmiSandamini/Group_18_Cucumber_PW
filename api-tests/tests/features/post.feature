@@ -1,3 +1,4 @@
+@api
 Feature: Create a new book
   As a user
   I want to create a new book using the API
