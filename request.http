@@ -1,0 +1,235 @@
+@rootUrl = http://localhost:7081
+
+### Get All Books Admin
+GET {{rootUrl}}/api/books
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+### Get All Books User
+GET {{rootUrl}}/api/books
+Authorization: Basic dXNlcjpwYXNzd29yZA==
+
+
+### Get Specific Book Admin
+GET {{rootUrl}}/api/books/1
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+
+### Get Specific Book User
+GET {{rootUrl}}/api/books/1
+Authorization: Basic dXNlcjpwYXNzd29yZA==
+
+#--------------------------------------------
+
+### Create a Book Admin
+POST {{rootUrl}}/api/books
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+{
+     "title": "Atomic Habits", 
+     "author": "James Clear"
+}
+
+### Create a Book Admin
+POST {{rootUrl}}/api/books
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+{
+     "title": "Feel Good Productivity", 
+    "author": "Ali Abdaal" 
+}
+
+
+### Create a Book Admin
+POST {{rootUrl}}/api/books
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+{
+    "title": "How to be a Stoic", 
+    "author": "Massimo Pigliucci" 
+}
+
+
+### Create a Book Admin
+POST {{rootUrl}}/api/books
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+{
+    "title": "Think and Grow Rich", 
+    "author": "Napoleon Hill"
+}
+
+
+### Create a Book Admin
+POST {{rootUrl}}/api/books
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+{
+    "title": "Wabi Sabi", 
+    "author": "Beth Kempton"
+}
+
+
+### Create a Book Admin
+POST {{rootUrl}}/api/books
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+{
+    "title": "The Book of Ichigo Ichie", 
+    "author": "Francesc Miralles" 
+}
+
+
+### Create a Book Admin
+POST {{rootUrl}}/api/books
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+{
+    "title": "Forest Bathing", 
+    "author": "Qing Li"
+}
+
+
+### Create a Book Admin
+POST {{rootUrl}}/api/books
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+{
+    "title": "Finish What You Start", 
+    "author": "Peter Hollins" 
+}
+
+#------------------------------------------
+
+### Create a Book User
+POST {{rootUrl}}/api/books
+Content-Type: application/json
+Authorization: Basic dXNlcjpwYXNzd29yZA==
+
+{
+            "id":2,
+            "title":"Wabi Sabi",
+            "author": "James Clear"
+}
+
+
+### Update a Book Admin
+PUT {{rootUrl}}/api/books/2
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+{
+    "id":2,
+    "title": "Atomic Habitss", 
+    "author": "James Clear" 
+}
+
+
+### Update a Book User  --> User is not permitted
+PUT {{rootUrl}}/api/books/2
+Content-Type: application/json
+Authorization: Basic dXNlcjpwYXNzd29yZA==
+
+{
+    "id":2,
+    "title": "Atomic Habitss", 
+    "author": "James Clear" 
+}
+
+# ---> 403 User is not permitted
+#--------------------------------------------------
+#-----------PUT Testing ----------------------------
+
+
+### Update a Book Admin --> Non existent ID
+PUT {{rootUrl}}/api/books/9
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+{
+    "id":9,
+    "title": "Non Existent ID", 
+    "author": "Rashmi Sandamini" 
+}
+
+# --> 404 Book Not Found
+
+### Update a Book Admin --> Non existent ID with existing Book and author
+PUT {{rootUrl}}/api/books/9
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+{
+    "id":9,
+    "title": "Atomic Habits", 
+    "author": "James Clear"  
+}
+
+# --> 208 Book Already Exists
+
+### Update a Book Admin --> Non existent ID with existing Book update and author
+PUT {{rootUrl}}/api/books/9
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+{
+    "id":9,
+    "title": "Atomic Habitss", 
+    "author": "James Clear"  
+}
+
+# --> 404 Book not found
+
+
+### Update a Book Admin --> Existent ID with existing Book title and author
+PUT {{rootUrl}}/api/books/2
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+{
+    "id":2,
+    "title": "Wabi Sabi", 
+    "author": "James Clear"  
+}
+
+# --> 208 Book already exists
+
+
+
+### Update a Book Admin --> 
+PUT {{rootUrl}}/api/books/1
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+{
+    "id":1,
+    "title": "Atomic Habits", 
+    "author": "James Clear"  
+}
+
+# --> 208 Book already exists
+
+
+
+
+
+
+
+
+
+#-----------------------------------------------------
+### Delete a Book Admin --> Admin can't delete
+DELETE {{rootUrl}}/api/books/4
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+
+### Delete a Book User --> User can delete
+DELETE {{rootUrl}}/api/books/10
+Authorization: Basic dXNlcjpwYXNzd29yZA==
