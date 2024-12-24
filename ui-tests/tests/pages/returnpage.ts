@@ -8,13 +8,19 @@ export default class ReturnPage extends BasePage {
     super(page, locs.path);
   }
 
-  async enterData(row: { [key: string]: string }) {
-    await this.enter(locs.orderIdInput, row.order_id);
-    await this.page.waitForTimeout(2000);
-    // await this.enter(locs.emailInput, row['Email']);
-    // await this.enter(locs.phoneNumberInput, row['Phone Number']);
-    // await this.enter(locs.reasonInput, row['Reason']);
-    // await this.click(locs.submitButton);
-
+  async enterData(data: { [key: string]: string }) {
+    await this.enter(locs.orderIdInput, data.order_id);
+    await this.enter(locs.orderDateInput, data.order_date);
+    await this.enter(locs.productNameInput, data.product_name);
+    await this.enter(locs.productCodeInput, data.product_code);
+    await this.enter(locs.qtyInput, data.qty);
+    await this.clickRadio(locs.reasonForReturnInput, data.reason);
+    await this.clickRadio(locs.productIsOpenedInput, data.opened);
+    await this.enter(locs.otherDetailsInput, data.other_details);
   }
+
+  async submitForm() {
+    await this.click(locs.submitReturnButton);
+  }
+
 }

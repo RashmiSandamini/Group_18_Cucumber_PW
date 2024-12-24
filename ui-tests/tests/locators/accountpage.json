@@ -7,7 +7,7 @@
   },
   "myAccount": {
     "locatorOptions": {},
-    "locator": "xpath=//a[contains(., 'My account') and @data-toggle and @class = 'icon-left both nav-link dropdown-toggle']",
+    "locator": "xpath=//li[contains(., 'My account') and @class = 'nav-item dropdown dropdown-hoverable']",
     "description": "My account link"
   }
 }

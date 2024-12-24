@@ -91,7 +91,8 @@ export default class BasePage {
     this.path = path;
   }
 
-  inPage() {
+  async inPage() {
+    await this.page.waitForLoadState('domcontentloaded');
     return this.page.url().endsWith(this.path);
   }
 
@@ -115,6 +116,13 @@ export default class BasePage {
     }
     console.log('====================================');
     console.log(`Clicked on ${loc['description']}`);
+    console.log('====================================');
+  }
+
+  async clickRadio(loc: any, value: string) {
+    await this.page.locator(loc['locator'].replace('${value}', value), loc['locatorOptions']).click();
+    console.log('====================================');
+    console.log(`Clicked on ${loc['description']} with value ${value}`);
     console.log('====================================');
   }
 

@@ -8,7 +8,7 @@ let accountPage: AccountPage;
 
 Then('I am on the account page', async function () {  
   accountPage = new AccountPage(getPage());
-  expect(accountPage.inPage()).toBeTruthy();
+  expect(await accountPage.inPage()).toBeTruthy();
 });
 
 When('I navigate to the returns page', async function () {
