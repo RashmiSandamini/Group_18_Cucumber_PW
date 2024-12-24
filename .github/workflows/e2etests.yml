@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  Test:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,7 +23,7 @@ jobs:
 
     - name: Start API server
       run: |
-        nohup java -jar /api/demo-0.0.1-SNAPSHOT.jar &
+        nohup java -jar api/demo-0.0.1-SNAPSHOT.jar &
         sleep 10
 
     - name: Run tests
