@@ -11,18 +11,18 @@ let page: Page;
 // Before all scenarios
 BeforeAll(async function() {
   dotenv.config();
-  browser = await chromium.launch({ headless: false, channel: 'chrome' });
+  browser = await chromium.launch({ headless: process.env.HEADLESS == "true", channel: 'chrome' });
 });
 
 // For each scenario
-Before(async function () {
+Before({ tags: "@ui" }, async function () {
   bCtx = await browser.newContext({ javaScriptEnabled: true });
   page = await bCtx.newPage();
-  await page.goto(process.env.web_url!);
+  await page.goto(process.env.WEB_URL!);
 });
 
 // After each scenario
-After(async function () {
+After({ tags: "@ui" }, async function () {
   await page.close();
   await bCtx.close();
 });
