@@ -8,6 +8,7 @@ export default class AccountPage extends BasePage {
   }
 
   async navigageToReturnPage() {
+    await this.getLocator(locs.myAccount).waitFor({ state: 'visible' });
     await this.hover(locs.myAccount);
     await this.getLocator(locs.returnPageButton).waitFor({ state: 'visible' });
     await this.click(locs.returnPageButton);
