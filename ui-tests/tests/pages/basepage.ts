@@ -97,7 +97,7 @@ export default class BasePage {
   }
 
   async navigate() {
-    await this.page.goto(process.env.web_url + this.path);
+    await this.page.goto(process.env.WEB_URL + this.path);
     await this.page.waitForLoadState('domcontentloaded');
   }
 

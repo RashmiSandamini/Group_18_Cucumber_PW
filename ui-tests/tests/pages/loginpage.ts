@@ -9,8 +9,8 @@ export default class LoginPage extends BasePage {
   }
 
   async login() {
-    await this.enter(locs.emailInput, process.env.web_user_email!);
-    await this.enter(locs.passwordInput, process.env.web_user_password!);
+    await this.enter(locs.emailInput, process.env.WEB_USER_EMAIL!);
+    await this.enter(locs.passwordInput, process.env.WEB_USER_PASSWORD!);
     await this.click(locs.loginButton);
   }
 }

@@ -1,4 +1,4 @@
-name: API End-to-End Tests
+name: End-to-End Tests
 
 on:
   push:
@@ -6,6 +6,14 @@ on:
       - main
   pull_request:
   workflow_dispatch:
+
+
+env:
+  API_URL: "http://localhost:7081"
+  WEB_URL: "https://ecommerce-playground.lambdatest.io"
+  WEB_USER_EMAIL: "dummy1234@gmail.com"
+  WEB_USER_PASSWORD: "dummy1234@gmail.com"
+  HEADLESS: "true"
 
 jobs:
   Test:
