@@ -1,0 +1,28 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Tue Dec 24 15:32:15 GMT 2024","Tue Dec 24 15:32:16 GMT 2024","115","","","","","","Update a non-existing book ID","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Tue Dec 24 15:32:16 GMT 2024","Tue Dec 24 15:32:16 GMT 2024","100","","","","","","Update the book with user level credentials","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Tue Dec 24 15:32:16 GMT 2024","Tue Dec 24 15:32:19 GMT 2024","3443","","","","","","Successfully initiate a product return","As a user
+  I want to initiate a product return using the UI
+  So that the return is processed by the system"
+"failed","Tue Dec 24 15:32:16 GMT 2024","Tue Dec 24 15:32:16 GMT 2024","114","","","","","","Update the book with existing book title","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"failed","Tue Dec 24 15:32:15 GMT 2024","Tue Dec 24 15:32:15 GMT 2024","107","","","","","","Create a book with whitespace titles","As a user
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"failed","Tue Dec 24 15:32:16 GMT 2024","Tue Dec 24 15:32:16 GMT 2024","115","","","","","","Update a non-existing book ID with a duplicate book title","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"failed","Tue Dec 24 15:32:15 GMT 2024","Tue Dec 24 15:32:15 GMT 2024","110","","","","","","Create a book without a title","As a user
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Tue Dec 24 15:32:15 GMT 2024","Tue Dec 24 15:32:15 GMT 2024","101","","","","","","Create a book with user level credentials","As a user
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Tue Dec 24 15:32:14 GMT 2024","Tue Dec 24 15:32:15 GMT 2024","739","","","","","","Successfully create a new book","As a user
+  I want to create a new book using the API
+  So that the book is stored in the system"
