@@ -14,6 +14,9 @@
       "api-tests/tests/support/world.ts"
     ],
     "requireModule": ["ts-node/register"],
-    "format": []
+    "format": ["allure-cucumberjs/reporter"],
+    "formatOptions": {
+      "resultsDir": "allure-results"
+    }
   }
 }
