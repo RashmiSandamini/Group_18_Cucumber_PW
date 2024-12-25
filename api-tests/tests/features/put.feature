@@ -1,3 +1,4 @@
+@api
 Feature: Update a Book
 As a user 
 I want to update a book using API
