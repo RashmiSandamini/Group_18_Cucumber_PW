@@ -14,7 +14,7 @@
       "ui-tests/tests/steps/**/*.ts"
     ],
     "requireModule": ["ts-node/register"],
-    "format": ["allure-cucumberjs/reporter","progress"],
+    "format": ["allure-cucumberjs/reporter"],
     "formatOptions": {
       "resultsDir": "allure-results"
     }
