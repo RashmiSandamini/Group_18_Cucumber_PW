@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js test",
-    "test:ui": "cucumber-js test --tags '@ui'",
-    "test:api": "cucumber-js test --tags '@api'"
+    "test:ui": "cucumber-js test --tags '@ui' --format 'summary'",
+    "test:api": "cucumber-js test --tags '@api' --format 'summary'"
   },
   "author": "Group_18",
   "license": "Apache-2.0",
