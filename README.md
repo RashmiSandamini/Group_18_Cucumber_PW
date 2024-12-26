@@ -12,4 +12,4 @@ This repository contains an automation suite developed as part of a university g
 
 ## Latest Test Results
 
-<a href="https://rashmisandamini.github.io/Group_18_Cucumber_PW" target="_blank">https://rashmisandamini.github.io/Group_18_Cucumber_PW</a>
+[https://rashmisandamini.github.io/Group_18_Cucumber_PW](https://rashmisandamini.github.io/Group_18_Cucumber_PW)
