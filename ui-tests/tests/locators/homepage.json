@@ -1,8 +1,0 @@
-{
-  "path": "/index.php?route=common/home",
-  "myAccount": {
-    "locatorOptions": {},
-    "locator": "xpath=//a[contains(., 'My account') and @data-toggle]",
-    "description": "My account link"
-  }
-}
