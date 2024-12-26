@@ -9,3 +9,7 @@ This repository contains an automation suite developed as part of a university g
 204202G - Silva WHI\
 204159E - Pigera ACJ\
 205093D - Salama FHF
+
+## Latest Test Results
+
+<a href="https://rashmisandamini.github.io/Group_18_Cucumber_PW" target="_blank">https://rashmisandamini.github.io/Group_18_Cucumber_PW</a>
