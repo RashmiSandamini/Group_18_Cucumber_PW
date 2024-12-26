@@ -1,0 +1,28 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Thu Dec 26 12:07:45 GMT 2024","Thu Dec 26 12:07:45 GMT 2024","145","","","","","","Create a book without a title","As a user
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Thu Dec 26 12:07:45 GMT 2024","Thu Dec 26 12:07:45 GMT 2024","96","","","","","","Create a book with user level credentials","As a user
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Thu Dec 26 12:07:45 GMT 2024","Thu Dec 26 12:07:45 GMT 2024","88","","","","","","Update the book with user level credentials","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Thu Dec 26 12:07:45 GMT 2024","Thu Dec 26 12:07:54 GMT 2024","8853","","","","","","Successfully initiate a product return","As a user
+  I want to initiate a product return using the UI
+  So that the return is processed by the system"
+"broken","Thu Dec 26 12:07:45 GMT 2024","Thu Dec 26 12:07:45 GMT 2024","115","","","","","","Update a non-existing book ID","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"failed","Thu Dec 26 12:07:45 GMT 2024","Thu Dec 26 12:07:45 GMT 2024","157","","","","","","Create a book with whitespace titles","As a user
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Thu Dec 26 12:07:44 GMT 2024","Thu Dec 26 12:07:45 GMT 2024","790","","","","","","Successfully create a new book","As a user
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"failed","Thu Dec 26 12:07:45 GMT 2024","Thu Dec 26 12:07:45 GMT 2024","103","","","","","","Update the book with existing book title","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"failed","Thu Dec 26 12:07:45 GMT 2024","Thu Dec 26 12:07:45 GMT 2024","97","","","","","","Update a non-existing book ID with a duplicate book title","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
