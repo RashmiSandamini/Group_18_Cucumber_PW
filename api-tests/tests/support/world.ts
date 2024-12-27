@@ -1,5 +1,5 @@
 import { setWorldConstructor } from "@cucumber/cucumber";
-import { request, APIRequestContext, APIResponse } from "@playwright/test"
+import { request, APIRequestContext, APIResponse } from "@playwright/test";
 
 class CustomWorld {
   context?: APIRequestContext;
@@ -8,14 +8,14 @@ class CustomWorld {
 
   async initRequestContext() {
     this.context = await request.newContext({
-      baseURL: 'http://localhost:7081/api',
+      baseURL: "http://localhost:7081/api",
       extraHTTPHeaders: {
-        'Content-Type': 'application/json'
-      }
+        "Content-Type": "application/json",
+      },
     });
   }
 
-  setAuth(auth:string) {
+  setAuth(auth: string) {
     this.auth = auth;
   }
 
