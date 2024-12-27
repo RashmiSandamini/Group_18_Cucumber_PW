@@ -49,18 +49,6 @@ When(
   }
 );
 
-Then(
-  'The response status code should be {int}',
-  async function (expResponseCode: number) {
-    expect(this.response.status()).toBe(expResponseCode);
-  }
-);
-
-Then('The response body should contain {string}', async function (expected: string) {
-  const body = await this.response.json();
-  expect(body.message).toBe(expected);
-});
-
 After(async function () {
   this.closeRequestContext();
 });

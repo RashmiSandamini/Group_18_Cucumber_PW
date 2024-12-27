@@ -23,7 +23,8 @@ Feature: Create a new book
         }
       """
     Then The response status code should be 400
-    And The response body should contain "Invalid request format"
+    And The response type should be "text/plain"
+    And The text response body should contain "Invalid request format"
 
   Scenario: Create a book with whitespace titles
     When I send a POST request to "/api/books" with the following books
@@ -31,7 +32,8 @@ Feature: Create a new book
       | ""        | Yoshino Uthada |
       | " "       | Yoshino Uthada |
     Then The response status code should be 400
-    And The response body should contain "Invalid request format"
+    And The response type should be "text/plain"
+    And The text response body should contain "Invalid request format"
 
   Scenario: Create a book with user level credentials
     Given I am authorized with "Basic dXNlcjpwYXNzd29yZA==" as a user
