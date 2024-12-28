@@ -13,7 +13,7 @@ export default class ProductPage extends BasePage {
 
   async addFirstProductToCart(): Promise<void> {
     // await this.click(locs.addToCartButton);
-    await this.page.locator("xpath=//button/i[contains(@class,'btn btn-cart cart-43')]").click
+    await this.page.locator("xpath=//button/i[contains(@class,'btn btn-cart cart-43')]").click      
     
   }
 
