@@ -9,5 +9,20 @@
     "locatorOptions": {},
     "locator": "xpath=//li[contains(., 'My account') and @class = 'nav-item dropdown dropdown-hoverable']",
     "description": "My account link"
+  },
+  "cartButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//div[@id='entry_217825']//a",
+    "description": "View cart button"
+  },
+  "cartSideDrawer": {
+    "locatorOptions": {},
+    "locator": "xpath=//div[@id='cart-total-drawer' and @class='mz-pure-drawer d-flex flex-column active']",
+    "description": "Cart Side Drawer"
+  },
+  "checkoutButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//a[contains(.,'Checkout') and @role='button']",
+    "description": "Proceed to checkout button"
   }
 }
