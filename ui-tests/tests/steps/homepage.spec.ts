@@ -15,9 +15,3 @@ Then('I should be redirected to the home page', async function () {
   homePage = new HomePage(getPage()); 
   await homePage.verifyOnHomePage();
 });
-
-
-
-
-
-
