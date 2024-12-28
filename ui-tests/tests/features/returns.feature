@@ -1,4 +1,5 @@
 
+@ui
 Feature: Initiate a product return
   As a user
   I want to initiate a product return using the UI

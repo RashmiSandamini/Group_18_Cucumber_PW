@@ -1,5 +1,4 @@
-import { Given, Then, When } from '@cucumber/cucumber';
-import { expect } from '@playwright/test';
+import { Given, When } from '@cucumber/cucumber';
 import { getPage } from '../corelib/corelib.spec';
 import ProductPage from '../pages/productPage';
 
