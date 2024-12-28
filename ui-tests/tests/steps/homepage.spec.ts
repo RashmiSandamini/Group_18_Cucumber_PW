@@ -12,6 +12,6 @@ Then('I should be navigated to the home page', async function () {
 });
 
 Then('I should be redirected to the home page', async function () {
-  homePage = new HomePage(getPage()); 
+  homePage = new HomePage(getPage());
   await homePage.verifyOnHomePage();
 });

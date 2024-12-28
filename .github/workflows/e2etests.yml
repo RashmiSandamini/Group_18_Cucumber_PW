@@ -12,7 +12,7 @@ env:
   WEB_URL: "https://ecommerce-playground.lambdatest.io"
   WEB_USER_EMAIL: "dummy1234@gmail.com"
   WEB_USER_PASSWORD: "dummy1234@gmail.com"
-  HEADLESS: "false"
+  HEADLESS: "true"
 
 jobs:
   Test:
