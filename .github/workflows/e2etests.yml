@@ -45,8 +45,7 @@ jobs:
         if [ "${{ github.event_name }}" == "pull_request" ]; then
           echo "PULL_REQUEST=https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }}" >> allure-results/environment.properties
         fi
-        echo "sha_short=$(git rev-parse --short "$GITHUB_SHA")" >> "$GITHUB_ENV"
-        echo "COMMIT= ${{ env.sha_short }}" >> allure-results/environment.properties
+        echo "COMMIT=$(git rev-parse --short "$GITHUB_SHA")" >> allure-results/environment.properties
         echo "ATTEMPT=$GITHUB_RUN_ATTEMPT" >> allure-results/environment.properties
 
     - name: Load test report history
