@@ -1,0 +1,8 @@
+{
+    "path": "/index.php?route=checkout/cart",
+        "continueShoppingButton": {
+        "locatorOptions": {},
+        "locator": "xpath=//a[contains(text(),'Continue Shopping')]",
+        "description": "Continue Shopping button"
+        }
+}

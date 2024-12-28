@@ -1,0 +1,13 @@
+{
+    "path": "/index.php?route=product%2Fsearch&search=MacBook",
+        "addToCartButton": {
+        "locatorOptions": {},
+        "locator":"xpath=//button/i[contains(@class,'btn btn-cart cart-43')]",
+        "description": "Add to Cart button for the first product"
+        },
+        "viewCartButton": {
+        "locatorOptions": {},
+        "locator": "xpath=//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart']",
+        "description": "View Cart button"
+        }
+}
