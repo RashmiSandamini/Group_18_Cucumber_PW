@@ -14,4 +14,6 @@ export default class AccountPage extends BasePage {
     await this.click(locs.returnPageButton);
   }
 
+  
+
 }
