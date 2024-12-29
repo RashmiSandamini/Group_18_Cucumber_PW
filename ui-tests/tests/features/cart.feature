@@ -14,4 +14,4 @@ Feature: Add to Cart Functionality
     And I click the "View Cart" button
     Then I should be on the shopping cart page
     And I click the "Continue Shopping" button
-    And I should be redirected to the home page
+    And I should be navigated to the home page
