@@ -1,0 +1,47 @@
+{
+    "path": "/index.php?route=product/category&path=30",
+    "firstProductAddToWishlistButton": {
+      "locatorOptions": {},
+      "locator": "xpath=//div[@class='product-thumb'][1]//button[contains(@class, 'wishlist')]",
+      "description": "Add to Wishlist button for the first product"
+    },
+
+    
+    "wishlistCount": {
+    "locatorOptions": {},
+    "locator": "xpath=//a[@class='btn btn-secondary btn-block']",
+    "description": "Wishlist count indicator"
+  },
+
+  
+  "shopByCategoryButton": { 
+    "role": "button",
+    "name": "Shop by Category",
+    "description":"Shop by category burgher menu icon"
+  },
+
+  "printersAndScannersLink": {
+    "role": "link", 
+    "name": "Printers & Scanners",
+    "description":"Printers and scanners category"
+  },
+
+  "addToWishlistBtn": {
+    "locatorOptions": {},
+    "locator": "xpath=//button[contains(@class,'btn btn-wishlist wishlist-28')]//i[@class='fas fa-heart']",
+    "description": "Add to wishlist button"
+  },
+
+  "viewWishlistBtn": {
+    "locatorOptions": {},
+    "locator": "xpath=//a[@class='btn btn-secondary btn-block']",
+    "description": "View wish list button in success message"
+  },
+
+  "successMessage": {
+        "method": "getByText",
+        "text": "Success: You have added HTC Touch HD to your wish list!",
+        "description":"Success message displayed after adding product successfully to wishlist"
+    }
+
+}
