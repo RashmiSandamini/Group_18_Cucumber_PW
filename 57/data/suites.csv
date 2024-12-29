@@ -1,0 +1,50 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sun Dec 29 08:49:21 GMT 2024","Sun Dec 29 08:49:26 GMT 2024","5455","","","","","","Successfully initiate a product return","As a user
+  I want to initiate a product return using the UI
+  So that the return is processed by the system"
+"passed","Sun Dec 29 08:49:14 GMT 2024","Sun Dec 29 08:49:14 GMT 2024","91","","","","","","Create a book with user level credentials","As a user
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Sun Dec 29 08:49:15 GMT 2024","Sun Dec 29 08:49:15 GMT 2024","16","","","","","","Update a book with an author name containing not only letters(when numbers and symbols are also there)","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"broken","Sun Dec 29 08:49:15 GMT 2024","Sun Dec 29 08:49:15 GMT 2024","15","","","","","","Non-logged-in user access","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Sun Dec 29 08:49:14 GMT 2024","Sun Dec 29 08:49:15 GMT 2024","105","","","","","","Update the book with user level credentials","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"failed","Sun Dec 29 08:49:14 GMT 2024","Sun Dec 29 08:49:14 GMT 2024","115","","","","","","Create a book with whitespace titles","As a user
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Sun Dec 29 08:49:15 GMT 2024","Sun Dec 29 08:49:15 GMT 2024","13","","","","","","Update a book with an empty author name","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"failed","Sun Dec 29 08:49:14 GMT 2024","Sun Dec 29 08:49:14 GMT 2024","122","","","","","","Create a book without a title","As a user
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Sun Dec 29 08:49:14 GMT 2024","Sun Dec 29 08:49:14 GMT 2024","115","","","","","","Update a non-existing book ID","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Sun Dec 29 08:49:15 GMT 2024","Sun Dec 29 08:49:21 GMT 2024","6042","","","","","","Add a product to the cart and verify in the shopping cart","I want to add a product to the cart,
+  Verify the product is displayed in the shopping cart,
+  And navigate back to the homepage,
+  So that I can confirm the cart and navigation functionality work as expected."
+"passed","Sun Dec 29 08:49:15 GMT 2024","Sun Dec 29 08:49:15 GMT 2024","108","","","","","","Update a non-existing book ID with a duplicate book title","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Sun Dec 29 08:49:26 GMT 2024","Sun Dec 29 08:49:32 GMT 2024","5449","","","","","","Add a single product to the wishlist","As a user,
+    I want to add products to my wishlist 
+    so I can review them later."
+"broken","Sun Dec 29 08:49:15 GMT 2024","Sun Dec 29 08:49:15 GMT 2024","48","","","","","","Successfully update an existing book","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Sun Dec 29 08:49:15 GMT 2024","Sun Dec 29 08:49:15 GMT 2024","13","","","","","","Update a book with author name containing leading and trailing whitespaces","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Sun Dec 29 08:49:13 GMT 2024","Sun Dec 29 08:49:14 GMT 2024","721","","","","","","Successfully create a new book","As a user
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Sun Dec 29 08:49:14 GMT 2024","Sun Dec 29 08:49:14 GMT 2024","125","","","","","","Update a book with existing book title","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
