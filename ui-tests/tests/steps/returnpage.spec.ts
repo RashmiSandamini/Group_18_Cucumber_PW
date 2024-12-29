@@ -7,7 +7,6 @@ import { expect } from '@playwright/test';
 let returnPage: ReturnPage;
 let continuePage: ReturnContinuePage;
 
-
 When('I initiate a return with the following details', async function (table: DataTable) {  
   returnPage = new ReturnPage(getPage());
   continuePage = new ReturnContinuePage(getPage());

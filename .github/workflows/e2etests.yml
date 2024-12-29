@@ -7,7 +7,6 @@ on:
   pull_request:
   workflow_dispatch:
 
-
 env:
   API_URL: "http://localhost:7081"
   WEB_URL: "https://ecommerce-playground.lambdatest.io"
@@ -39,6 +38,16 @@ jobs:
         npm install
         npm test
 
+    - name: Set environment properties
+      if: always()
+      run: |
+        echo "EVENT=${{ github.event_name }}" >> allure-results/environment.properties
+        if [ "${{ github.event_name }}" == "pull_request" ]; then
+          echo "PULL_REQUEST=https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }}" >> allure-results/environment.properties
+        fi
+        echo "COMMIT=https://github.com/${{ github.repository }}/commits/$(git rev-parse --short ${{ github.event.after }})" >> allure-results/environment.properties
+        echo "ATTEMPT=$GITHUB_RUN_ATTEMPT" >> allure-results/environment.properties
+
     - name: Load test report history
       uses: actions/checkout@v3
       if: always()
@@ -62,3 +71,21 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: gh-pages
         publish_dir: allure-history
+
+    - name: Comment on PR with test results link
+      if: always() && github.event_name == 'pull_request'
+      run: |
+        COMMENT="Test results will be available here shortly: https://rashmisandamini.github.io/Group_18_Cucumber_PW"
+        
+        PR_URL="https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments"
+        
+        EXISTING_COMMENTS=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" $PR_URL)
+    
+        if echo "$EXISTING_COMMENTS" | grep -q "$COMMENT"; then
+          echo "The comment already exists. Skipping posting."
+        else
+          curl -X POST $PR_URL \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -d "{\"body\": \"$COMMENT\"}"
+          echo "Comment posted successfully."
+        fi

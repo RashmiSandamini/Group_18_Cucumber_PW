@@ -10,8 +10,8 @@
     ],
     "require": [
       "api-tests/tests/steps/**/*.ts",
-      "ui-tests/tests/steps/**/*.ts",
-      "api-tests/tests/support/world.ts"
+      "api-tests/tests/support/world.ts",
+      "ui-tests/tests/steps/**/*.ts"
     ],
     "requireModule": ["ts-node/register"],
     "format": ["allure-cucumberjs/reporter"],

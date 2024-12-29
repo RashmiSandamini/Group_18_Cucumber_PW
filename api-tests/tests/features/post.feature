@@ -25,7 +25,8 @@ Feature: Create a new book
         }
       """
     Then The response status code should be 400
-    And The response body should contain "Invalid request format"
+    And The response type should be "text/plain"
+    And The text response body should contain "Invalid request format"
 
   @205036H
   Scenario: Create a book with whitespace titles
@@ -34,7 +35,8 @@ Feature: Create a new book
       | ""        | Yoshino Uthada |
       | " "       | Yoshino Uthada |
     Then The response status code should be 400
-    And The response body should contain "Invalid request format"
+    And The response type should be "text/plain"
+    And The text response body should contain "Invalid request format"
 
   @205036H
   Scenario: Create a book with user level credentials

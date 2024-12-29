@@ -1,5 +1,4 @@
 import { Then, When } from '@cucumber/cucumber';
-import { expect } from '@playwright/test';
 import ShoppingCartPage from '../pages/shoppingCartPage';
 import { getPage } from '../corelib/corelib.spec';
 
@@ -13,5 +12,3 @@ Then('I should be on the shopping cart page', async function () {
 Then('I click the "Continue Shopping" button', async function () {
   await shoppingCartPage.clickContinueShoppingButton();
 });
-
-
