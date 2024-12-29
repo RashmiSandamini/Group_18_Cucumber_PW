@@ -1,0 +1,32 @@
+{
+  "path": "/index.php?route=account/wishlist",
+  "wishlistRowSelector": {
+    "locatorOptions": {},
+    "locator": "xpath=//table[@class='wishlist-table']//tr",
+    "description": "Wishlist table rows"
+  },
+
+  "productInWishlist": {
+    "method": "locator",
+    "xpath": "//a[normalize-space()='{productName}']",
+    "description": "Product name"
+  },
+
+  "rowsSelector": {
+    "method": "locator",
+    "xpath": "//table[@class='table table-hover border']//tbody//tr",
+    "description": "Rows in wishlist table"
+  },
+
+  "wishListButton":{
+    "method": "locator",
+    "xpath": "//span[@data-original-title='Wishlist']//*[name()='svg']",
+    "description": "Wishlist Button"
+  },
+
+  "removeFromWishlistBtn":{
+    "method": "locator",
+    "xpath": "//i[@class='fa fa-times']",
+    "description": "Remove product from wishlist Button"
+  }
+}
