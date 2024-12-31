@@ -1,0 +1,48 @@
+{
+    "path": "/index.php?route=account/register",
+    "firstnameInput": {
+        "locatorOptions": {},
+        "locator": "xpath=//input[@id='input-firstname']",
+        "description": "First Name input field"
+    }, 
+    "lastnameInput": {
+        "locatorOptions": {},
+        "locator": "xpath=//input[@id='input-lastname']",
+        "description": "Last Name input field"
+    }, 
+    "emailInput": {
+        "locatorOptions": {},
+        "locator": "xpath=//input[@id='input-email']",
+        "description": "Email input field"
+    }, 
+    "telephoneInput": {
+        "locatorOptions": {},
+        "locator": "xpath=//input[@id='input-telephone']",
+        "description": "Telephone input field"
+    }, 
+    "passwordInput": {
+        "locatorOptions": {},
+        "locator": "xpath=//input[@id='input-password']",
+        "description": "Password input field"
+    },
+    "confirmPasswordInput": {
+        "locatorOptions": {},
+        "locator": "xpath=//input[@id='input-confirm']",
+        "description": "Confirm Password input field"
+    },
+    "newsletterInput": {
+        "locatorOptions": {},
+        "locator": "xpath=//label[@for='input-newsletter-no']",
+        "description": "Newsletter subscription label"
+    },
+    "privacyAgree": {
+        "locatorOptions": {},
+        "locator": "xpath=  //label[@for='input-agree']",
+        "description": "Privacy Agree"
+    },
+    "continueButton": {
+        "locatorOptions": {},
+        "locator": "xpath=//*[@id='content']/form/div/div/input",
+        "description": "Continue Button"
+    }
+}
