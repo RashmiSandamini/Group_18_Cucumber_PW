@@ -46,7 +46,7 @@ jobs:
           echo "PULL_REQUEST=https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }}" >> allure-results/environment.properties
         fi
         echo "ATTEMPT=$GITHUB_RUN_ATTEMPT" >> allure-results/environment.properties
-        echo "COMMIT=https://github.com/${{ github.repository }}/commits/$(git rev-parse --short ${{ github.event.after }})" >> allure-results/environment.properties
+        echo "COMMIT=https://github.com/${{ github.repository }}/commits/$(git rev-parse --short ${{ github.event.pull_request.head.sha }})" >> allure-results/environment.properties
 
     - name: Load test report history
       uses: actions/checkout@v3
@@ -75,7 +75,7 @@ jobs:
     - name: Comment on PR with test results link
       if: always() && github.event_name == 'pull_request'
       run: |
-        COMMIT=$(git rev-parse --short ${{ github.event.after }})
+        COMMIT=$(git rev-parse --short ${{ github.event.pull_request.head.sha }})
         COMMENT="### Workflow Information\nAttempt: ${{ github.run_attempt }}\nLast Commit: [\`$COMMIT\`](https://github.com/${{ github.repository }}/commits/$COMMIT)\nResults: [\`https://rashmisandamini.github.io/Group_18_Cucumber_PW/${{ github.run_number }}\`](https://rashmisandamini.github.io/Group_18_Cucumber_PW/${{ github.run_number }})"
         
         PR_URL="https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments"
