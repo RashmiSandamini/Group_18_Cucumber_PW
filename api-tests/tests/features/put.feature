@@ -67,7 +67,7 @@ So that the updated book is stored in the system
             }
             """
         Then The response status code should be 404
-        And The response body should contain "Book not found"
+        And The text response body should contain "Book not found"
 
     #204202G
 

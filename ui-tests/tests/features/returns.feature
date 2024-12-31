@@ -1,4 +1,3 @@
-
 @ui
 Feature: Initiate a product return
   As a user
