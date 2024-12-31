@@ -9,9 +9,21 @@ export default class ShoppingCartPage extends BasePage {
 
   async verifyOnShoppingCartPage(): Promise<void> {
     await this.inPage();
+    console.log("Navigated to shopping cart page")
   }
 
-  async clickContinueShoppingButton() {
-    await this.click(locs.continueShoppingButton, true);
-  }
+  async isProductInCart(){
+    const productName = 'MacBook'; // Replace with the desired product name
+    const productLocator = locs.productInCart;
+    const xpath = productLocator.locator.replace('{productName}', productName);
+    const productInCart = await this.page.locator(xpath).textContent();
+    console.log("Product is successfully added to the cart")
+    await this.page.waitForTimeout(5000); // 5 seconds
+    return productInCart;
+  }
+
+async clickContinuetoHome() {
+  await this.click(locs.continueBtn);
+}
+
 }

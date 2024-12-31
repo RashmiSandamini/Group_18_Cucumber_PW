@@ -1,6 +1,7 @@
 import { Then, When } from '@cucumber/cucumber';
 import ShoppingCartPage from '../pages/shoppingCartPage';
 import { getPage } from '../corelib/corelib.spec';
+import { expect } from 'playwright/test';
 
 let shoppingCartPage: ShoppingCartPage;
 
@@ -9,6 +10,17 @@ Then('I should be on the shopping cart page', async function () {
   await shoppingCartPage.verifyOnShoppingCartPage();
 });
 
-Then('I click the "Continue Shopping" button', async function () {
-  await shoppingCartPage.clickContinueShoppingButton();
+Then('Product should appear in cart page', async function () {
+  const product = await shoppingCartPage.isProductInCart();
+  const productName = 'MacBook';
+  expect(product).toEqual(productName);
 });
+
+Then('I should be able to click the ContinueShopping button', async function () {
+  await shoppingCartPage.clickContinuetoHome();
+});
+
+
+
+
+
