@@ -1,8 +1,17 @@
 {
     "path": "/index.php?route=checkout/cart",
-        "continueShoppingButton": {
+        "continueBtn": {
         "locatorOptions": {},
-        "locator": "xpath=//a[contains(text(),'Continue Shopping')]",
-        "description": "Continue Shopping button"
-        }
+        "locator": "//a[@class='btn btn-lg btn-secondary mr-auto']",
+        "description": "Continue button"
+  },
+
+        "productInCart": {
+        "locatorOptions": {},
+        "locator": "//td[@class='text-left']//a[contains(text(),'MacBook')]",
+        "description": "Product name"
+    }
 }
+
+
+
