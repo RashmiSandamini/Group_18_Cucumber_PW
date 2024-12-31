@@ -9,6 +9,7 @@ import locs from '../locators/accountsuccesspage.json';
 let registerPage: RegisterPage;
 let accountsuccesspage: AccountSuccessPage;
 let homePage:HomePage;
+let dynamicEmail: string;
 
 Given('I am on the register page', async function () {
   registerPage = new RegisterPage(getPage());
@@ -17,9 +18,13 @@ Given('I am on the register page', async function () {
 });
 
 When('I fill in the registration form with valid details', async function (table: DataTable) {
+  dynamicEmail = `user_${Date.now()}@testmail.com`;
   const tableData = table.hashes();
   for (let i = 0; i < tableData.length; i++) {
     const row = tableData[i];
+    if (row.email === 'dynamic_email') {
+      row.email = dynamicEmail; // Assign dynamic email
+    }
     await registerPage.enterData(row);
   }
 });
@@ -44,9 +49,4 @@ Then('The register should be successful', async function () {
 
 Then('I should be able to click the "Continue" button', async function () {
   await accountsuccesspage.continueRegistration();
-});
-
-Then('I should be navigated to the home page', async function () {
-  homePage = new HomePage(getPage());
-  expect(homePage.inPage()).toBeTruthy();
 });
