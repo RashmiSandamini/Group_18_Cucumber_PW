@@ -22,21 +22,4 @@ export default class ProductCategoryPage extends BasePage {
 
   async viewSuccessMessage(){
     const successMessage = await this.page.isVisible(locs.successMessage.text);
-  }
-
-  // out of stock bug test
-  async addTocart(){
-    const product = await this.page.locator('//*[@id="entry_212408"]/div/div[2]');
-    await product.hover();
-    await this.click(locs.addToCart);
-  }
-
-  async getCartItemCount() {
-    await this.page.reload();
-    const countElement = await this.page.locator(locs.cartItemCount.locator);
-    const countText = await countElement.innerText();
-    return countText;
-  }
-  
-}
-  
+  }}
