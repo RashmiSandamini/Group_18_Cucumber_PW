@@ -10,6 +10,5 @@ Then("I should be in the confirm order page", async function () {
 });
 
 Then("I confirm the order", async function () {
-  confirmOrderPage = new ConfirmOrderPage(getPage());
   await confirmOrderPage.confirmOrder();
 });

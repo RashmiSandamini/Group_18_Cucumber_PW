@@ -7,6 +7,7 @@ So that the updated book is stored in the system
     Background:
         Given I am authorized with "Basic YWRtaW46cGFzc3dvcmQ=" as an admin
 
+    @205124C
     Scenario: Update a non-existing book ID
         Given A book with ID 13 does not exist
         Then The response status code should be 404
@@ -21,7 +22,7 @@ So that the updated book is stored in the system
         Then The response status code should be 404
         And The text response body should contain "Book not found"
 
-
+    @205124C
     Scenario: Update a book with existing book title
         Given I send a POST request to "/api/books" with the following books
             | title         | author    |
@@ -38,7 +39,7 @@ So that the updated book is stored in the system
         Then The response status code should be 208
         And The text response body should contain "Book Already Exists"
 
-
+    @205124C
     Scenario: Update the book with user level credentials
         Given I am authorized with "Basic dXNlcjpwYXNzd29yZA==" as a user
         When I send a PUT request to "/api/books/1" with following details:
@@ -51,6 +52,7 @@ So that the updated book is stored in the system
         """
         Then The response status code should be 403
 
+    @205124C @failing
     Scenario: Update a non-existing book ID with a duplicate book title
         Given I send a POST request to "/api/books" with the following books
             | title          | author  |
