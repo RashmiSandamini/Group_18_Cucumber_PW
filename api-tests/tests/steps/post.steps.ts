@@ -12,9 +12,9 @@ Before(async function () {
   await this.initRequestContext();
 });
 
-Given('I am authorized with {string} as an admin', async function (creds: string) {
-  this.setAuth(creds);
-});
+// Given('I am authorized with {string} as an admin', async function (creds: string) {
+//   this.setAuth(creds);
+// });
 
 Given('I am authorized with {string} as a user', async function (creds: string) {
   this.setAuth(creds);

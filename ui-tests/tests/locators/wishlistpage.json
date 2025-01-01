@@ -24,9 +24,15 @@
     "description": "Wishlist Button"
   },
 
-  "removeFromWishlistBtn":{
-    "method": "locator",
-    "xpath": "//i[@class='fa fa-times']",
+  "continueBtnInWishlistPage": {
+    "locatorOptions": {},
+    "locator": "xpath=//a[@class='btn btn-primary']",
+    "description": "Continue button on wishlist page"
+  },
+
+  "removeFromWishlistBtn": {
+    "locatorOptions": {},
+    "locator": "xpath=//i[@class='fa fa-times']",
     "description": "Remove product from wishlist Button"
   }
 }
