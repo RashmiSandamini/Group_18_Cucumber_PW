@@ -21,7 +21,7 @@ BeforeAll(async function () {
     throw new Error("WEB_URL is not defined in the environment variables.");
   }
   browser = await chromium.launch({
-    headless: process.env.HEADLESS !== "false",
+    headless: process.env.HEADLESS == "true",
     channel: "chrome",
   });
   console.log("Browser initialized.");

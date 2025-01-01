@@ -7,11 +7,14 @@ Feature: Add to Cart Functionality
   So that I can confirm the cart and navigation functionality work as expected.
 
   Background: 
-    Given I should be on the product page
+    Given I am logged in as a valid user
+    And I am on the account page
 
   Scenario: Add a product to the cart and verify in the shopping cart
-    When I add the first product to the cart
+    When I navigate to the product page
+    And I add the first product to the cart
     And I click the "View Cart" button
     Then I should be on the shopping cart page
-    And I click the "Continue Shopping" button
-    And I should be redirected to the home page
+    And Product should appear in cart page
+    And I should be able to click the ContinueShopping button
+    And I should be navigated to the home page

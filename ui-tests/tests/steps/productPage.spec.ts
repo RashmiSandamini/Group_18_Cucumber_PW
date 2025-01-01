@@ -4,9 +4,9 @@ import ProductPage from '../pages/productPage';
 
 let productPage: ProductPage;
 
-Given('I should be on the product page', async function () {
+When('I navigate to the product page', async function () {
   productPage = new ProductPage(getPage());
-  await productPage.verifyOnProductPage();
+  await productPage.navigate();
 });
 
 When('I add the first product to the cart', async function () {

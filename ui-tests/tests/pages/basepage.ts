@@ -78,6 +78,17 @@ export default class BasePage {
     return this.page.getByRole(element, loc['locatorOptions']);
   }
 
+  async isVisible(loc: any, byRole = false): Promise<boolean> {
+    let isVisible: boolean;
+    if (!byRole) {
+        isVisible = await this.getLocator(loc).isVisible();
+    } else {
+        isVisible = await this.getLocatorByRole(loc).isVisible();
+    }
+    console.log('====================================');
+    console.log(`Visibility of ${loc['description']}: ${isVisible}`);
+    console.log('====================================');
+    return isVisible;
 }
 
-
+}
