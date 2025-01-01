@@ -7,7 +7,7 @@ Feature: Add Products to Wishlist
     Background:
     Given I am logged in as a valid user
     And I am on the account page
-    #And my wishlist is empty
+    And my wishlist is empty
 
     Scenario: Add a single product to the wishlist
         When I navigate to a Headphones category
