@@ -112,7 +112,6 @@ So that the updated book is stored in the system
         {
             "id": 3,
             "title": "The War",
-            "title": "The War",
             "author": ""
         }
         """
