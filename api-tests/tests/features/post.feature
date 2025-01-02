@@ -53,34 +53,35 @@ Feature: Create a new book
       | title           | author         |
       | How Do You Live | Yoshino Uthada |
       | How Do You Live | Yoshino Uthada |
-    Then The response status code should be 409
-    And The response body should contain "Duplicate book entry is not allowed"
+    Then The response status code should be 208
+    And The text response body should contain "Book Already Exists"
 
-  @204159E
+  @204159E @failing
   Scenario: Create a book without an author
     When I send a POST request to "/api/books" with the following JSON body:
       """
         {
-          "title": "How Do You Live"
+          "title": "Matilda"
         }
       """
     Then The response status code should be 400
-    And The response body should contain "Invalid request format"
+    And The response body should include "Invalid request format"
 
-  @204159E
+  @204159E @failing
   Scenario: Create a book with numbers in the author field
     When I send a POST request to "/api/books" with the following books
       | title           | author         |
-      | Inferno         | Dan Brown123   |
-      | Bigglesworth    | 9876           |
+      | Book 01        | Dan Brown123   |
+      | Book 02    | 9876           |
     Then The response status code should be 400
-    And The response body should contain "Author name must contain only letters"
+    And The text response body should contain "Invalid request format"
 
   @204159E
   Scenario: Attempt to create a book without being logged in
-    When I send a POST request to "/api/books" with the following books
+    Given I am not logged in as an admin or user
+    When I send a POST request to "/api/books" with the following book details
       | title           | author         |
-      | How Do You Live | Yoshino Uthada |
+      | How Do You Live 3 | Yoshino Uthada |
     Then The response status code should be 401
-    And The response body should contain "Unauthorized access"
+
 

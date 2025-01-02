@@ -1,29 +1,35 @@
 {
-    "path": "/index.php?route=product/category&path=30",
-    "firstProductAddToWishlistButton": {
-      "locatorOptions": {},
-      "locator": "xpath=//div[@class='product-thumb'][1]//button[contains(@class, 'wishlist')]",
-      "description": "Add to Wishlist button for the first product"
-    },
+  "path": "/index.php?route=product/category&path=30",
+  "firstProductAddToWishlistButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//div[@class='product-thumb'][1]//button[contains(@class, 'wishlist')]",
+    "description": "Add to Wishlist button for the first product"
+  },
 
-    
-    "wishlistCount": {
+  "wishlistCount": {
     "locatorOptions": {},
     "locator": "xpath=//a[@class='btn btn-secondary btn-block']",
     "description": "Wishlist count indicator"
   },
 
-  
-  "shopByCategoryButton": { 
+  "shopByCategoryButton": {
     "role": "button",
     "name": "Shop by Category",
-    "description":"Shop by category burgher menu icon"
+    "description": "Shop by category burgher menu icon"
   },
 
+  "productCategoryImage": { 
+    "locatorOptions": {},
+    "locator": "xpath=//div[@class='carousel-item active']//img[@title='HTC Touch HD']",
+    "description": "Product image"
+    
+  },
+
+
   "printersAndScannersLink": {
-    "role": "link", 
+    "role": "link",
     "name": "Printers & Scanners",
-    "description":"Printers and scanners category"
+    "description": "Printers and scanners category"
   },
 
   "addToWishlistBtn": {
@@ -39,9 +45,20 @@
   },
 
   "successMessage": {
-        "method": "getByText",
-        "text": "Success: You have added HTC Touch HD to your wish list!",
-        "description":"Success message displayed after adding product successfully to wishlist"
-    }
+    "method": "getByText",
+    "text": "Success: You have added HTC Touch HD to your wish list!",
+    "description": "Success message displayed after adding product successfully to wishlist"
+  },
 
+  "addToCart": {
+    "locatorOptions": {},
+    "locator": "xpath=//*[@id='entry_212408']/div/div[2]/div/div[1]/div[2]/button[1]",
+    "description": "Add product to the cart"
+  },
+
+  "cartItemCount": {
+    "locatorOptions": {},
+    "locator": "xpath=//*[@id='entry_217825']/a/div[1]/span",
+    "description": "Cart item count"
+  }
 }

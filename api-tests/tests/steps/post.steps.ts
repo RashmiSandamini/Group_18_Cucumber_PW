@@ -12,12 +12,16 @@ Before(async function () {
   await this.initRequestContext();
 });
 
-Given('I am authorized with {string} as an admin', async function (creds: string) {
-  this.setAuth(creds);
-});
+// Given('I am authorized with {string} as an admin', async function (creds: string) {
+//   this.setAuth(creds);
+// });
 
 Given('I am authorized with {string} as a user', async function (creds: string) {
   this.setAuth(creds);
+});
+
+Given("I am not logged in as an admin or user", async function () {
+  this.auth = null; // Clear the auth to simulate a non-logged-in user
 });
 
 
@@ -48,6 +52,27 @@ When(
     }
   }
 );
+
+When(
+  'I send a POST request to {string} with the following book details',
+  async function (path: string, table: DataTable) {
+    const tableData = table.hashes();
+    for (let i = 0; i < tableData.length; i++) {
+      const row = tableData[i];
+      this.response = await this.context.post(path, {
+        data: {
+          title: row.title,
+          author: row.author,
+        },
+        headers: {
+          Authorization: `Bearer ${this.auth}`, // Ensure Authorization is a string
+          'Content-Type': 'application/json',  // Include Content-Type for JSON payloads
+        },
+      });
+    }
+  }
+);
+
 
 Then(
   'The response body should include {string}',
