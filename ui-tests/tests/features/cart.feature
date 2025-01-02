@@ -1,4 +1,4 @@
-
+@ui
 Feature: Add to Cart Functionality
 
   I want to add a product to the cart,
