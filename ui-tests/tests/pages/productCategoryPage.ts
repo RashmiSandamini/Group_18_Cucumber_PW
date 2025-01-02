@@ -16,6 +16,9 @@ export default class ProductCategoryPage extends BasePage {
       await this.getLocator(locs.productCategoryImage).waitFor({ state: 'visible' });
       await this.hover(locs.productCategoryImage);
       await this.getLocator(locs.addToWishlistBtn).waitFor({ state: 'visible' });
+      await this.getLocator(locs.productCategoryImage).waitFor({ state: 'visible' });
+      await this.hover(locs.productCategoryImage);
+      await this.getLocator(locs.addToWishlistBtn).waitFor({ state: 'visible' });
       await this.click(locs.addToWishlistBtn);
       await this.click(locs.viewWishlistBtn);   
   }
