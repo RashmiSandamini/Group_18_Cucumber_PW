@@ -16,7 +16,7 @@ Feature: Create a new book
       | Bigglesworth    | WE Johns       |
     Then The response status code should be 201
 
-  @205036H @exploratory
+  @205036H @failing
   Scenario: Create a book without a title
     When I send a POST request to "/api/books" with the following JSON body:
       """
@@ -28,7 +28,7 @@ Feature: Create a new book
     And The response type should be "text/plain"
     And The text response body should contain "Invalid request format"
 
-  @205036H  @exploratory
+  @205036H  @failing
   Scenario: Create a book with whitespace titles
     When I send a POST request to "/api/books" with the following books
       | title     | author         |
