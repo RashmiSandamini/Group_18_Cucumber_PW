@@ -1,4 +1,4 @@
-import { Then } from '@cucumber/cucumber';
+import { Then, Given } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 
 Then(
@@ -7,6 +7,19 @@ Then(
     expect(this.response.status()).toBe(expResponseCode);
   }
 );
+
+Given("I am authorized with {string} as an admin", function (creds: string) {
+  this.auth = creds;
+});
+
+Given('I am authorized with {string} as a user', async function (creds: string) {
+  this.setAuth(creds);
+});
+
+Given("I am not logged in as an admin or user", async function () {
+  this.auth = null; // Clear the auth to simulate a non-logged-in user
+});
+
 
 Then('The response type should be {string}', async function (expType: string) {
   expect(this.response.headers()['content-type']).toContain(expType);

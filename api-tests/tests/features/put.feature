@@ -128,7 +128,7 @@ So that the updated book is stored in the system
 
     @204202G @failing
     Scenario: Non-logged-in user access
-        And I am not logged in as an admin
+        And I am not logged in as an admin or user
         And a valid book with id=5 exists in the system
         When I send a PUT request to "/api/books/5" with below details:
         """
