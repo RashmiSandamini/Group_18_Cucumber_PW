@@ -18,13 +18,11 @@
     "description": "Shop by category burgher menu icon"
   },
 
-  "productCategoryImage": { 
+  "productCategoryImage": {
     "locatorOptions": {},
     "locator": "xpath=//div[@class='carousel-item active']//img[@title='HTC Touch HD']",
     "description": "Product image"
-    
   },
-
 
   "printersAndScannersLink": {
     "role": "link",
@@ -65,12 +63,24 @@
   "itemHTC": {
     "locatorOptions": {},
     "locator": "xpath=//div[@id='entry_212408']/div/div[1]",
-    "description": "HTC Touch HD Item"
+    "description": "HTC Touch HD item"
   },
 
   "addToCartItemHTC": {
     "locatorOptions": {},
     "locator": "xpath=//div[@id='entry_212408']/div/div[1]/div/div/div[2]/button[1]",
     "description": "Add HTC Touch HD to the cart"
+  },
+
+  "zeroWeightItem": {
+    "locatorOptions": {},
+    "locator": "xpath=//div[@id='entry_212408']/div/div[8]",
+    "description": "Zero weight item"
+  },
+
+  "addToCartItemZeroWeight": {
+    "locatorOptions": {},
+    "locator": "xpath=//div[@id='entry_212408']/div/div[8]/div/div/div[2]/button[1]",
+    "description": "Add Zero weight item to the cart"
   }
 }

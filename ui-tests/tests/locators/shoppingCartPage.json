@@ -29,5 +29,10 @@
     "locatorOptions": {},
     "locator": "//div[@id='content']/div/a[contains(.,'Checkout')]",
     "description": "Checkout button"
+  },
+  "cartTable": {
+    "locatorOptions": {},
+    "locator": "//table[@class='table table-bordered']",
+    "description": "cart table"
   }
 }

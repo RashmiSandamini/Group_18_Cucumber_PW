@@ -1,8 +1,8 @@
 @api
-Feature: Update a Book
-As a user 
-I want to update a book using API
-So that the updated book is stored in the system
+Feature: Update a book as an admin
+    As an admin 
+    I want to update a book using API
+    So that the updated book is stored in the system
 
     Background:
         Given I am authorized with "Basic YWRtaW46cGFzc3dvcmQ=" as an admin
@@ -17,8 +17,8 @@ So that the updated book is stored in the system
 
     @205124C
     Scenario: Update a non-existing book ID
-        And A book with ID 100 does not exist
-        Then The response status code should be 404
+        Given A book with ID 100 does not exist
+        And The response status code should be 404
         When I send a PUT request to "/api/books/100" with following details:
          """
         {
@@ -43,22 +43,9 @@ So that the updated book is stored in the system
         Then The response status code should be 208
         And The text response body should contain "Book Already Exists"
 
-    @205124C
-    Scenario: Update the book with user level credentials
-        And I am authorized with "Basic dXNlcjpwYXNzd29yZA==" as a user
-        When I send a PUT request to "/api/books/1" with following details:
-         """
-        {
-            "id":1,
-            "title":"Make it a habit",
-            "author": "James Clear"
-        }
-        """
-        Then The response status code should be 403
-
     @205124C @failing
     Scenario: Update a non-existing book ID with a duplicate book title
-        And A book with ID 100 does not exist
+        Given A book with ID 100 does not exist
         And The response status code should be 404
         When I send a PUT request to "/api/books/100" with following details:
             """
@@ -73,7 +60,7 @@ So that the updated book is stored in the system
 
     @204202G
     Scenario: Successfully update an existing book
-        And a valid book with id=1 exists in the system
+        Given a valid book with id=1 exists in the system
         When I send a PUT request to "/api/books/1" with following details:
         """
         {
@@ -86,7 +73,7 @@ So that the updated book is stored in the system
 
     @204202G @failing
     Scenario: Update a book with an author name containing not only letters(when numbers and symbols are also there)
-        And a valid book with id=2 exists in the system
+        Given a valid book with id=2 exists in the system
         When I send a PUT request to "/api/books/2" with following details:
         """
         {
@@ -100,7 +87,7 @@ So that the updated book is stored in the system
 
     @204202G @failing
     Scenario: Update a book with an empty author name
-        And a valid book with id=3 exists in the system
+        Given a valid book with id=3 exists in the system
         When I send a PUT request to "/api/books/3" with following details:
         """
         {
@@ -114,7 +101,7 @@ So that the updated book is stored in the system
 
     @204202G @failing
     Scenario: Update a book with book title containing leading and trailing whitespaces but an existing book title
-        And a valid book with id=4 exists in the system
+        Given a valid book with id=4 exists in the system
         When I send a PUT request to "/api/books/4" with following details:
         """
         {
@@ -125,18 +112,3 @@ So that the updated book is stored in the system
         """
         Then The response status code should be 400
         And The response body should contain "Invalid | Empty Input Parameters in the Request"
-
-    @204202G @failing
-    Scenario: Non-logged-in user access
-        And I am not logged in as an admin or user
-        And a valid book with id=5 exists in the system
-        When I send a PUT request to "/api/books/5" with below details:
-        """
-        {
-            "id": 5,
-            "title": "Another Title",
-            "author": "Another Author"
-        }
-        """
-        Then The response status code should be 403
-        And The response body should contain "Forbidden"

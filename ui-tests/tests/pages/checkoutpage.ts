@@ -36,6 +36,6 @@ export default class CheckoutPage extends BasePage {
   async gotoCheckout() {
     await this.click(locs.cartButton);
     await this.getLocator(locs.cartSideDrawer).waitFor({ state: 'visible' });
-    await this.click(locs.editCartButton);
+    await this.click(locs.proceedToCheckout);
   }
 }

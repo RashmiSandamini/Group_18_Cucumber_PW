@@ -49,3 +49,9 @@ Then('I add an item to the cart', async function () {
   await productCategoryPage.navigate();
   await productCategoryPage.addHTCTocart();
 });
+
+Then('I add a zero weight item to the cart', async function () {
+  productCategoryPage = new ProductCategory(getPage());
+  await productCategoryPage.navigate();
+  await productCategoryPage.addZeroWeightItemTocart();
+});
