@@ -9,5 +9,11 @@
     "locatorOptions": {},
     "locator": "xpath=//li[contains(., 'My account') and @class = 'nav-item dropdown dropdown-hoverable']",
     "description": "My account link"
+  },
+
+  "checkoutButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//a[contains(.,'Checkout') and @role='button']",
+    "description": "Proceed to checkout button"
   }
 }

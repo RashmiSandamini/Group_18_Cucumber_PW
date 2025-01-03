@@ -115,7 +115,7 @@ Authorization: Basic dXNlcjpwYXNzd29yZA==
 
 {
             "id":2,
-            "title":"Wabi Sabi",
+            "title":"Mario",
             "author": "James Clear"
 }
 
@@ -132,18 +132,18 @@ Authorization: Basic YWRtaW46cGFzc3dvcmQ=
 
 {
     "id":2,
-    "title": "Atomic Habitss", 
+    "title": "Wabi Sabi", 
     "author": "James Clear" 
 }
 
 
 ### Update a Book User  --> User is not permitted
-PUT {{rootUrl}}/api/books/2
+PUT {{rootUrl}}/api/books/100
 Content-Type: application/json
 Authorization: Basic dXNlcjpwYXNzd29yZA==
 
 {
-    "id":2,
+    "id":100,
     "title": "Atomic Habitss", 
     "author": "James Clear" 
 }

@@ -1,18 +1,9 @@
 import { Given, When, Then, Before, After } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
-import axios from 'axios';
 
 Before(async function () {
   await this.initRequestContext();
 });
-
-// Given("I am authorized with {string} as an admin", async function (creds: string) {
-//   this.setAuth(creds);
-// });
-
-// Given("I am authorized with {string} as a user", async function (creds: string) {
-//   this.setAuth(creds);
-// });
 
 Given("A book with ID {int} does not exist", async function (id: number) {
   this.response = await this.context.get(`/api/books/${id}`, {
@@ -21,39 +12,57 @@ Given("A book with ID {int} does not exist", async function (id: number) {
   expect(this.response.status()).toBe(404);
 });
 
-// Given('a valid book with id={int} exists in the system', async function (id: number) {
-//   try {
-//     const bookExists = await axios.get(`/api/books/${id}`, { headers: this.headers });
-//     expect(bookExists.status).to.equal(200); // Book exists
-//   } catch (error) {
-//     throw new Error(`Book with id=${id} does not exist in the system`);
-//   }
-// });
-
-Given('a valid book with id={int} exists in the system', async function (bookId: number) {
-  // Create a valid book in the system if not already present
-  const bookData = {
-    id: bookId,
-    title: 'Test Book',
-    author: 'Test Author',
-    publishedDate: '2023-01-01',
-    isbn: '1234567890',
-  };
-
-  try {
-    await axios.post('http://your-api-endpoint/books', bookData, {
+Given("I send a POST request to {string} with the following details", async function (path: string, dataTable: any) {
+  const books = dataTable.hashes();
+  for (const book of books) {
+    await this.context.post(path, {
+      data: book,
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Basic YWRtaW46cGFzc3dvcmQ=', // Admin authorization to add the book
+        Authorization: this.auth,
+        "Content-Type": "application/json",
       },
     });
-  } catch (error) {
-    // Handle errors gracefully if book already exists
-    if (axios.isAxiosError(error) && error.response?.status !== 409) {
-      throw new Error('Failed to create a valid book in the system');
-    }
   }
 });
+
+When("I send a PUT request to {string} with below details:", async function (path: string, jsonBody: string) {
+    const json = JSON.parse(jsonBody);
+    
+    // Ensure headers are correctly formatted
+    const headers: Record<string, string> = { "Content-Type": "application/json" };
+    if (this.auth) {
+        headers.Authorization = this.auth; // Add Authorization header if present
+    }
+
+    // Make the PUT request
+    this.response = await this.context.put(path, {
+        data: json,
+        headers,
+    });
+});
+
+Given("a valid book with id={int} exists in the system", async function (id: number) {
+  const bookData = {
+    id: id,
+    title: `Test Book ${id}`,
+    author: `Test Author ${id}`,
+  };
+
+  // Send POST request to create the book
+  const response = await this.context.post("/api/books", {
+    data: bookData,
+    headers: {
+      Authorization: "Basic YWRtaW46cGFzc3dvcmQ=", // Admin credentials
+      "Content-Type": "application/json",
+    },
+  });
+
+  // Handle conflicts gracefully if the book already exists
+  if (response.status() !== 201 && response.status() !== 409) {
+    throw new Error(`Failed to create a valid book in the system. Status: ${response.status()}`);
+  }
+});
+
 
 Given("A book with title {string} already exists", async function (title: string) {
   this.response = await this.context.get("/api/books", {
@@ -62,34 +71,26 @@ Given("A book with title {string} already exists", async function (title: string
   expect(this.response.status()).toBe(200);
 
   const books = await this.response.json();
-  const bookTitleExists = books.some(
-    (book: { title: string }) => book.title === title
-  );
-
-  expect(bookTitleExists).toBe(true);
-});
-
-Given("I am not logged in as an admin", async function () {
-  this.auth = null; // Clear the auth to simulate a non-logged-in user
+  const bookExists = books.some((book: { title: string }) => book.title === title);
+  expect(bookExists).toBe(true);
 });
 
 When("I send a PUT request to {string} with following details:", async function (path: string, jsonBody: string) {
   const json = JSON.parse(jsonBody);
   this.response = await this.context.put(path, {
     data: json,
-    headers: { Authorization: this.auth },
+    headers: {
+      Authorization: this.auth,
+      "Content-Type": "application/json",
+    },
   });
 });
 
-// Then("The response status code should be {int}", async function (expResponseCode: number) {
-//   expect(this.response.status()).toBe(expResponseCode);
-// });
-
-// Then("The response body should contain {string}", async function (expected: string) {
-//   const body = await this.response.json();
-//   expect(JSON.stringify(body)).toContain(expected);
-// });
+Then("The response body should contain {string}", async function (expected: string) {
+  const body = await this.response.text();
+  expect(body).toContain(expected);
+});
 
 After(async function () {
-  this.closeRequestContext();
+  await this.closeRequestContext();
 });

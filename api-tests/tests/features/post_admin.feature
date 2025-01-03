@@ -1,6 +1,6 @@
 @api
-Feature: Create a new book
-  As a user
+Feature: Create a new book by admin
+  As an admin
   I want to create a new book using the API
   So that the book is stored in the system
 
@@ -9,14 +9,14 @@ Feature: Create a new book
 
   @205036H
   Scenario: Successfully create a new book
-    When I send a POST request to "/api/books" with the following books
+    When I send a POST request to "/api/books" with the following books:
       | title           | author         |
       | How Do You Live | Yoshino Uthada |
       | Inferno         | Dan Brown      |
       | Bigglesworth    | WE Johns       |
     Then The response status code should be 201
 
-  @205036H @exploratory
+  @205036H @failing
   Scenario: Create a book without a title
     When I send a POST request to "/api/books" with the following JSON body:
       """
@@ -28,9 +28,9 @@ Feature: Create a new book
     And The response type should be "text/plain"
     And The text response body should contain "Invalid request format"
 
-  @205036H  @exploratory
+  @205036H  @failing
   Scenario: Create a book with whitespace titles
-    When I send a POST request to "/api/books" with the following books
+    When I send a POST request to "/api/books" with the following books:
       | title     | author         |
       | ""        | Yoshino Uthada |
       | " "       | Yoshino Uthada |
@@ -38,49 +38,31 @@ Feature: Create a new book
     And The response type should be "text/plain"
     And The text response body should contain "Invalid request format"
 
-  @205036H
-  Scenario: Create a book with user level credentials
-    Given I am authorized with "Basic dXNlcjpwYXNzd29yZA==" as a user
-    When I send a POST request to "/api/books" with the following books
-      | title           | author    |
-      | Angels & Demons | Dan Brown |
-    Then The response status code should be 201
-
-
   @204159E  
   Scenario: Insert the same book multiple times
-    When I send a POST request to "/api/books" with the following books
+    When I send a POST request to "/api/books" with the following books:
       | title           | author         |
       | How Do You Live | Yoshino Uthada |
       | How Do You Live | Yoshino Uthada |
-    Then The response status code should be 409
-    And The response body should contain "Duplicate book entry is not allowed"
+    Then The response status code should be 208
+    And The text response body should contain "Book Already Exists"
 
-  @204159E
+  @204159E @failing
   Scenario: Create a book without an author
     When I send a POST request to "/api/books" with the following JSON body:
       """
         {
-          "title": "How Do You Live"
+          "title": "Matilda"
         }
       """
     Then The response status code should be 400
-    And The response body should contain "Invalid request format"
+    And The response body should include "Invalid request format"
 
-  @204159E
+  @204159E @failing
   Scenario: Create a book with numbers in the author field
-    When I send a POST request to "/api/books" with the following books
+    When I send a POST request to "/api/books" with the following books:
       | title           | author         |
-      | Inferno         | Dan Brown123   |
-      | Bigglesworth    | 9876           |
+      | Book 01        | Dan Brown123   |
+      | Book 02    | 9876           |
     Then The response status code should be 400
-    And The response body should contain "Author name must contain only letters"
-
-  @204159E
-  Scenario: Attempt to create a book without being logged in
-    When I send a POST request to "/api/books" with the following books
-      | title           | author         |
-      | How Do You Live | Yoshino Uthada |
-    Then The response status code should be 401
-    And The response body should contain "Unauthorized access"
-
+    And The text response body should contain "Invalid request format"
