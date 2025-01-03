@@ -24,7 +24,7 @@ Then('success message should be displayed', async function () {
   expect(productCategoryPage.viewSuccessMessage).toBeTruthy();
 });
 
-// Out of stock bug test
+// Out of Stock Feature
 Given('There is an out-of-stock product', async () => {
   outofstockproductPage = new OutOfStockProductPage(getPage());
   await outofstockproductPage.navigate();
@@ -32,7 +32,7 @@ Given('There is an out-of-stock product', async () => {
   expect(statusText).toContain('Out Of Stock');
 });
 
-When('The user tries to add the product to the cart', async () => {
+When('I try to add the product to the cart', async () => {
   productCategoryPage = new ProductCategory(getPage());
   await productCategoryPage.navigate();
   await productCategoryPage.addTocart();
@@ -43,6 +43,7 @@ Then('The product should not be added to the cart', async () => {
   expect(itemCount).toBe('0');
 });
 
+//Checkout Feature
 Then('I add an item to the cart', async function () {
   productCategoryPage = new ProductCategory(getPage());
   await productCategoryPage.navigate();
