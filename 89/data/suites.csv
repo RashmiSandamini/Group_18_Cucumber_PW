@@ -1,0 +1,98 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Jan 03 15:13:34 GMT 2025","Fri Jan 03 15:13:34 GMT 2025","125","","","","","","Retrieve a non-existent book by ID","As an admin
+  I want to retrieve books using the API
+  So that I can view details of all books or a specific book"
+"passed","Fri Jan 03 15:13:33 GMT 2025","Fri Jan 03 15:13:33 GMT 2025","18","","","","","","DELETE Non-existent Book","As an admin or user
+  I want to delete a book using the API
+  So that the book is removed from the system"
+"passed","Fri Jan 03 15:13:33 GMT 2025","Fri Jan 03 15:13:33 GMT 2025","12","","","","","","DELETE by User","As an admin or user
+  I want to delete a book using the API
+  So that the book is removed from the system"
+"failed","Fri Jan 03 15:13:34 GMT 2025","Fri Jan 03 15:13:35 GMT 2025","89","","","","","","Retrieve a book by ID","As a user
+  I want to retrieve books using the API
+  So that I can view details of a specific book"
+"failed","Fri Jan 03 15:13:37 GMT 2025","Fri Jan 03 15:13:37 GMT 2025","135","","","","","","Update a book with book title containing leading and trailing whitespaces but an existing book title","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"broken","Fri Jan 03 15:13:40 GMT 2025","Fri Jan 03 15:14:15 GMT 2025","35016","","","","","","User comments on a blog post and replies to their comment","As a user
+  I want to view, comment, and reply on a blog post
+  So that I can engage with the content and community"
+"passed","Fri Jan 03 15:13:33 GMT 2025","Fri Jan 03 15:13:34 GMT 2025","845","","","","","","Retrieve all books","As an admin
+  I want to retrieve books using the API
+  So that I can view details of all books or a specific book"
+"passed","Fri Jan 03 15:13:35 GMT 2025","Fri Jan 03 15:13:35 GMT 2025","103","","","","","","Create a book with user level credentials","As a user
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"failed","Fri Jan 03 15:13:37 GMT 2025","Fri Jan 03 15:13:40 GMT 2025","3277","","","","","","User tries to add an ""Out of Stock"" product to the cart from the product list page","As a user  
+  I want to be prevented from adding out-of-stock products to the cart  
+  So that I do not mistakenly purchase unavailable items"
+"failed","Fri Jan 03 15:13:35 GMT 2025","Fri Jan 03 15:13:35 GMT 2025","99","","","","","","Create a book with whitespace titles","As an admin
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Fri Jan 03 15:13:35 GMT 2025","Fri Jan 03 15:13:35 GMT 2025","29","","","","","","Attempt to create a book without being logged in","As a guest user
+  I should not be able to create a new book using the API
+  So that only authorized users can create books"
+"failed","Fri Jan 03 15:13:35 GMT 2025","Fri Jan 03 15:13:35 GMT 2025","88","","","","","","Create a book without an author","As an admin
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Fri Jan 03 15:13:35 GMT 2025","Fri Jan 03 15:13:35 GMT 2025","109","","","","","","Successfully create a new book","As an admin
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Fri Jan 03 15:14:24 GMT 2025","Fri Jan 03 15:14:44 GMT 2025","20544","","","","","","Successfully checkout a cart","As a user
+  I want to complete the checkout process
+  So that I can purchase items in my cart"
+"failed","Fri Jan 03 15:13:36 GMT 2025","Fri Jan 03 15:13:36 GMT 2025","156","","","","","","Update a non-existing book ID with a duplicate book title","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Fri Jan 03 15:13:34 GMT 2025","Fri Jan 03 15:13:34 GMT 2025","139","","","","","","Retrieve a specific book by ID","As an admin
+  I want to retrieve books using the API
+  So that I can view details of all books or a specific book"
+"failed","Fri Jan 03 15:13:35 GMT 2025","Fri Jan 03 15:13:35 GMT 2025","112","","","","","","Create a book without a title","As an admin
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Fri Jan 03 15:14:15 GMT 2025","Fri Jan 03 15:14:24 GMT 2025","8459","","","","","","Add a product to the cart and verify in the shopping cart","I want to add a product to the cart,
+  Verify the product is displayed in the shopping cart,
+  And navigate back to the homepage,
+  So that I can confirm the cart and navigation functionality work as expected."
+"passed","Fri Jan 03 15:13:35 GMT 2025","Fri Jan 03 15:13:35 GMT 2025","101","","","","","","Insert the same book multiple times","As an admin
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Fri Jan 03 15:13:36 GMT 2025","Fri Jan 03 15:13:36 GMT 2025","144","","","","","","Update a book with existing book title","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Fri Jan 03 15:13:36 GMT 2025","Fri Jan 03 15:13:36 GMT 2025","221","","","","","","Update the book with user level credentials","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Fri Jan 03 15:14:44 GMT 2025","Fri Jan 03 15:14:46 GMT 2025","2049","","","","","","Successful registration with dynamic email","As a new user
+  I want to register an account
+  So that I can log in and use the platform"
+"failed","Fri Jan 03 15:13:37 GMT 2025","Fri Jan 03 15:13:37 GMT 2025","139","","","","","","Non-logged-in user access","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Fri Jan 03 15:13:35 GMT 2025","Fri Jan 03 15:13:36 GMT 2025","180","","","","","","Update a non-existing book ID","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Fri Jan 03 15:13:33 GMT 2025","Fri Jan 03 15:13:33 GMT 2025","8","","","","","","DELETE by Non-logged-in User","As an admin or user
+  I want to delete a book using the API
+  So that the book is removed from the system"
+"passed","Fri Jan 03 15:13:33 GMT 2025","Fri Jan 03 15:13:33 GMT 2025","36","","","","","","DELETE Happy Path","As an admin or user
+  I want to delete a book using the API
+  So that the book is removed from the system"
+"passed","Fri Jan 03 15:14:49 GMT 2025","Fri Jan 03 15:14:53 GMT 2025","4222","","","","","","Add a single product to the wishlist","As a user,
+    I want to add products to my wishlist 
+    so I can review them later."
+"passed","Fri Jan 03 15:13:36 GMT 2025","Fri Jan 03 15:13:36 GMT 2025","157","","","","","","Successfully update an existing book","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"failed","Fri Jan 03 15:13:35 GMT 2025","Fri Jan 03 15:13:35 GMT 2025","102","","","","","","Create a book with numbers in the author field","As an admin
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"failed","Fri Jan 03 15:13:36 GMT 2025","Fri Jan 03 15:13:37 GMT 2025","196","","","","","","Update a book with an empty author name","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Fri Jan 03 15:14:46 GMT 2025","Fri Jan 03 15:14:49 GMT 2025","2928","","","","","","Successfully initiate a product return","As a user
+  I want to initiate a product return using the UI
+  So that the return is processed by the system"
+"failed","Fri Jan 03 15:13:36 GMT 2025","Fri Jan 03 15:13:36 GMT 2025","155","","","","","","Update a book with an author name containing not only letters(when numbers and symbols are also there)","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
