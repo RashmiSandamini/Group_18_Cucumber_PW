@@ -6,11 +6,11 @@ Feature: Retrieve Books as Admin
 
   Background:
     Given I am authorized with "Basic YWRtaW46cGFzc3dvcmQ=" as an admin
+    And I have created a book with title "To Kill A Mocking Bird" and author "Harper Lee"
+    And I have created a book with title "Winged Dreams" and author "Saarah"
 
   @205093D
   Scenario: Retrieve all books
-    Given I have created a book with title "To Kill A Mocking Bird" and author "Harper Lee"
-    And I have created a book with title "Winged Dreams" and author "Saarah"
     When I send a GET request to "/api/books"
     Then The response status code should be 200
     And The response body should contain
