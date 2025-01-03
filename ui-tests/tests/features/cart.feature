@@ -6,11 +6,10 @@ Feature: Add to Cart Functionality
   And navigate back to the homepage,
   So that I can confirm the cart and navigation functionality work as expected.
 
-  Background: 
+  @204159E
+  Scenario: Add a product to the cart and verify in the shopping cart
     Given I am logged in as a valid user
     And I am on the account page
-
-  Scenario: Add a product to the cart and verify in the shopping cart
     When I navigate to the product page
     And I add the first product to the cart
     And I click the "View Cart" button

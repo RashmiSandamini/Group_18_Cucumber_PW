@@ -73,7 +73,7 @@ So that the updated book is stored in the system
 
     @204202G
     Scenario: Successfully update an existing book
-        Given a valid book with id=1 exists in the system
+        And a valid book with id=1 exists in the system
         When I send a PUT request to "/api/books/1" with following details:
         """
         {
@@ -86,7 +86,7 @@ So that the updated book is stored in the system
 
     @204202G @failing
     Scenario: Update a book with an author name containing not only letters(when numbers and symbols are also there)
-        Given a valid book with id=2 exists in the system
+        And a valid book with id=2 exists in the system
         When I send a PUT request to "/api/books/2" with following details:
         """
         {
@@ -100,7 +100,7 @@ So that the updated book is stored in the system
 
     @204202G @failing
     Scenario: Update a book with an empty author name
-        Given a valid book with id=3 exists in the system
+        And a valid book with id=3 exists in the system
         When I send a PUT request to "/api/books/3" with following details:
         """
         {
@@ -114,7 +114,7 @@ So that the updated book is stored in the system
 
     @204202G @failing
     Scenario: Update a book with book title containing leading and trailing whitespaces but an existing book title
-        Given a valid book with id=4 exists in the system
+        And a valid book with id=4 exists in the system
         When I send a PUT request to "/api/books/4" with following details:
         """
         {
@@ -128,7 +128,7 @@ So that the updated book is stored in the system
 
     @204202G @failing
     Scenario: Non-logged-in user access
-        Given I am not logged in as an admin
+        And I am not logged in as an admin or user
         And a valid book with id=5 exists in the system
         When I send a PUT request to "/api/books/5" with below details:
         """

@@ -5,10 +5,6 @@ Before(async function () {
   await this.initRequestContext();
 });
 
-Given("I am authorized with {string} as an admin", function (creds: string) {
-  this.auth = creds;
-});
-
 Given("A book with ID {int} does not exist", async function (id: number) {
   this.response = await this.context.get(`/api/books/${id}`, {
     headers: { Authorization: this.auth },
@@ -77,10 +73,6 @@ Given("A book with title {string} already exists", async function (title: string
   const books = await this.response.json();
   const bookExists = books.some((book: { title: string }) => book.title === title);
   expect(bookExists).toBe(true);
-});
-
-Given("I am not logged in as an admin", function () {
-  this.auth = null; // Clear the auth to simulate a non-logged-in user
 });
 
 When("I send a PUT request to {string} with following details:", async function (path: string, jsonBody: string) {
