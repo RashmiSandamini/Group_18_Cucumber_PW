@@ -7,12 +7,12 @@ Feature: Retrieve Books as User
   @205093D @failing
   Scenario: Retrieve a book by ID
     Given I am authorized with "Basic dXNlcjpwYXNzd29yZA==" as a user
-    When I send a GET request to "/api/books/1"
+    When I send a GET request to "/api/books/2"
     Then The response status code should be 200
     And The response body should contain
       """
       {
-        "id": 1,
+        "id": 2,
         "title": "To Kill A Mocking Bird",
         "author": "Harper Lee"
       }

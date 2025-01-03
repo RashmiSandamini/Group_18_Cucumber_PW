@@ -17,12 +17,12 @@ Feature: Retrieve Books as Admin
       """
       [
         {
-          "id": 1,
+          "id": 2,
           "title": "To Kill A Mocking Bird",
           "author": "Harper Lee"
         },
         {
-          "id": 2,
+          "id": 3,
           "title": "Winged Dreams",
           "author": "Saarah"
         }
@@ -31,12 +31,12 @@ Feature: Retrieve Books as Admin
 
   @205093D
   Scenario: Retrieve a specific book by ID
-    When I send a GET request to "/api/books/1"
+    When I send a GET request to "/api/books/2"
     Then The response status code should be 200
     And The response body should contain
         """
         {
-            "id": 1,
+            "id": 2,
             "title": "To Kill A Mocking Bird",
             "author": "Harper Lee"
         }
