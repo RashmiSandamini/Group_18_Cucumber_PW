@@ -46,4 +46,11 @@ export default class ProductCategoryPage extends BasePage {
     await this.hover(locs.itemHTC);
     await this.click(locs.addToCartItemHTC);
   }
+
+  async addZeroWeightItemTocart() {
+    await this.page.waitForLoadState('domcontentloaded');
+    await this.page.locator(locs.zeroWeightItem.locator);
+    await this.hover(locs.zeroWeightItem);
+    await this.click(locs.addToCartItemZeroWeight);
+  }
 }

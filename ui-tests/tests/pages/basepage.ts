@@ -1,20 +1,88 @@
 import { Page } from 'playwright';
 
-type role = 
-  | 'alert' | 'alertdialog' | 'application' | 'article' | 'banner' | 'blockquote'
-  | 'button' | 'caption' | 'cell' | 'checkbox' | 'code' | 'columnheader'
-  | 'combobox' | 'complementary' | 'contentinfo' | 'definition' | 'deletion'
-  | 'dialog' | 'directory' | 'document' | 'emphasis' | 'feed' | 'figure'
-  | 'form' | 'generic' | 'grid' | 'gridcell' | 'group' | 'heading' | 'img'
-  | 'insertion' | 'link' | 'list' | 'listbox' | 'listitem' | 'log' | 'main'
-  | 'marquee' | 'math' | 'meter' | 'menu' | 'menubar' | 'menuitem'
-  | 'menuitemcheckbox' | 'menuitemradio' | 'navigation' | 'none' | 'note'
-  | 'option' | 'paragraph' | 'presentation' | 'progressbar' | 'radio'
-  | 'radiogroup' | 'region' | 'row' | 'rowgroup' | 'rowheader' | 'scrollbar'
-  | 'search' | 'searchbox' | 'separator' | 'slider' | 'spinbutton' | 'status'
-  | 'strong' | 'subscript' | 'superscript' | 'switch' | 'tab' | 'table'
-  | 'tablist' | 'tabpanel' | 'term' | 'textbox' | 'time' | 'timer' | 'toolbar'
-  | 'tooltip' | 'tree' | 'treegrid' | 'treeitem';
+type role =
+  | 'alert'
+  | 'alertdialog'
+  | 'application'
+  | 'article'
+  | 'banner'
+  | 'blockquote'
+  | 'button'
+  | 'caption'
+  | 'cell'
+  | 'checkbox'
+  | 'code'
+  | 'columnheader'
+  | 'combobox'
+  | 'complementary'
+  | 'contentinfo'
+  | 'definition'
+  | 'deletion'
+  | 'dialog'
+  | 'directory'
+  | 'document'
+  | 'emphasis'
+  | 'feed'
+  | 'figure'
+  | 'form'
+  | 'generic'
+  | 'grid'
+  | 'gridcell'
+  | 'group'
+  | 'heading'
+  | 'img'
+  | 'insertion'
+  | 'link'
+  | 'list'
+  | 'listbox'
+  | 'listitem'
+  | 'log'
+  | 'main'
+  | 'marquee'
+  | 'math'
+  | 'meter'
+  | 'menu'
+  | 'menubar'
+  | 'menuitem'
+  | 'menuitemcheckbox'
+  | 'menuitemradio'
+  | 'navigation'
+  | 'none'
+  | 'note'
+  | 'option'
+  | 'paragraph'
+  | 'presentation'
+  | 'progressbar'
+  | 'radio'
+  | 'radiogroup'
+  | 'region'
+  | 'row'
+  | 'rowgroup'
+  | 'rowheader'
+  | 'scrollbar'
+  | 'search'
+  | 'searchbox'
+  | 'separator'
+  | 'slider'
+  | 'spinbutton'
+  | 'status'
+  | 'strong'
+  | 'subscript'
+  | 'superscript'
+  | 'switch'
+  | 'tab'
+  | 'table'
+  | 'tablist'
+  | 'tabpanel'
+  | 'term'
+  | 'textbox'
+  | 'time'
+  | 'timer'
+  | 'toolbar'
+  | 'tooltip'
+  | 'tree'
+  | 'treegrid'
+  | 'treeitem';
 
 export default class BasePage {
   protected page: Page;
@@ -27,6 +95,7 @@ export default class BasePage {
 
   async inPage() {
     await this.page.waitForLoadState('domcontentloaded');
+    console.log(this.page.url());
     return this.page.url().endsWith(this.path);
   }
 
@@ -35,14 +104,14 @@ export default class BasePage {
     await this.page.waitForLoadState('domcontentloaded');
   }
 
-  async hover(loc:any) {
+  async hover(loc: any) {
     await this.getLocator(loc).hover();
     console.log('====================================');
     console.log(`Hovered on ${loc['description']}`);
     console.log('====================================');
   }
 
-  async click(loc: any, byRole=false) {
+  async click(loc: any, byRole = false) {
     if (!byRole) {
       await this.getLocator(loc).click(loc['actOptions']);
     } else {
@@ -53,10 +122,10 @@ export default class BasePage {
     console.log('====================================');
   }
 
-
-
   async clickRadio(loc: any, value: string) {
-    await this.page.locator(loc['locator'].replace('${value}', value), loc['locatorOptions']).click();
+    await this.page
+      .locator(loc['locator'].replace('${value}', value), loc['locatorOptions'])
+      .click();
     console.log('====================================');
     console.log(`Clicked on ${loc['description']} with value ${value}`);
     console.log('====================================');
@@ -81,14 +150,13 @@ export default class BasePage {
   async isVisible(loc: any, byRole = false): Promise<boolean> {
     let isVisible: boolean;
     if (!byRole) {
-        isVisible = await this.getLocator(loc).isVisible();
+      isVisible = await this.getLocator(loc).isVisible();
     } else {
-        isVisible = await this.getLocatorByRole(loc).isVisible();
+      isVisible = await this.getLocatorByRole(loc).isVisible();
     }
     console.log('====================================');
     console.log(`Visibility of ${loc['description']}: ${isVisible}`);
     console.log('====================================');
     return isVisible;
-}
-
+  }
 }

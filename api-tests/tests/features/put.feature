@@ -18,7 +18,7 @@ So that the updated book is stored in the system
     @205124C
     Scenario: Update a non-existing book ID
         And A book with ID 100 does not exist
-        Then The response status code should be 404
+        And The response status code should be 404
         When I send a PUT request to "/api/books/100" with following details:
          """
         {
