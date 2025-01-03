@@ -1,6 +1,6 @@
 @api
-Feature: Update a Book
-    As a user 
+Feature: Update a book as an admin
+    As an admin 
     I want to update a book using API
     So that the updated book is stored in the system
 

@@ -1,6 +1,6 @@
 @api 
 Feature: Update a book by user
-    As a guest user
+    As a user
     I should not be able to update a book using the API
     So that only authorized users can update books
 
