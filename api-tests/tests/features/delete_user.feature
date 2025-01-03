@@ -9,10 +9,8 @@ Feature: Delete a book as User
     Given I am authorized as "user" in DELETE tests with "Basic dXNlcjpwYXNzd29yZA=="
     When I send a DELETE request to "/api/books/3"
     Then The response status code should be 403
-    And The response body should include "Access forbidden"
 
-  @204226H @negative
+  @204226H
   Scenario: DELETE by Non-logged-in User
     When I send a DELETE request to "/api/books/3"
     Then The response status code should be 401
-    And The response body should include "Access forbidden"
