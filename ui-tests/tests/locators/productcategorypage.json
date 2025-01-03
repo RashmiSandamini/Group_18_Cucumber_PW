@@ -18,6 +18,14 @@
     "description": "Shop by category burgher menu icon"
   },
 
+  "productCategoryImage": { 
+    "locatorOptions": {},
+    "locator": "xpath=//div[@class='carousel-item active']//img[@title='HTC Touch HD']",
+    "description": "Product image"
+    
+  },
+
+
   "printersAndScannersLink": {
     "role": "link",
     "name": "Printers & Scanners",
