@@ -1,0 +1,27 @@
+{
+  "path": "/blog",
+  "blogNavLink": {
+    "locator": "//ul[@class='navbar-nav horizontal']//span[@class='title'][normalize-space()='Blog']",
+    "description": "Blog navigation link in header"
+  },
+  "firstBlogPost": {
+    "locator": "(//div[contains(@class, 'article-thumb')])[1]",
+    "description": "First blog post container"
+  },
+  "commentTextarea": {
+    "locator": "//textarea[@id='input-comment']",
+    "description": "Comment input textarea"
+  },
+  "postCommentButton": {
+    "locator": "//button[@id='button-comment']",
+    "description": "Post comment button"
+  },
+  "replyButton": {
+    "locator": "//li[@id='comment1709']//a[@class='reply'][normalize-space()='Reply']",
+    "description": "Reply button for a specific comment"
+  },
+  "postReplyButton": {
+    "locator": "//button[contains(text(), 'Post comment')]",
+    "description": "Button to post a reply"
+  }
+}
