@@ -1,27 +1,29 @@
-import { DataTable, Given, Then, When } from "@cucumber/cucumber";
-import { getPage } from "../corelib/corelib.spec";
-import CheckoutPage from "../pages/checkoutpage";
+import { DataTable, Given, Then, When } from '@cucumber/cucumber';
+import { getPage } from '../corelib/corelib.spec';
+import CheckoutPage from '../pages/checkoutpage';
 
 let checkoutPage: CheckoutPage;
 
-Given("I have items in the cart", async function () {
-  console.log("I have items in the cart");
-});
-
-Then("I should be in the checkout page", async function () {
+Then('I should be on the checkout page', async function () {
   checkoutPage = new CheckoutPage(getPage());
   await checkoutPage.verifyOnCheckoutPage();
 });
 
-When("I click on {string} radio button", async function (string) {
+When('I click on {string} radio button', async function (string) {
+  checkoutPage = new CheckoutPage(getPage());
   await checkoutPage.clickOnNewAddressRadioButton();
 });
 
-When("I enter the following details", async function (table: DataTable) {
+When('I enter the following details', async function (table: DataTable) {
   const tableData = table.hashes()[0];
   await checkoutPage.enterData(tableData);
 });
 
-Then("I click on continue button", async function () {
+Then('I click on continue button', async function () {
   await checkoutPage.continueCheckout();
+});
+
+When('I click the cart button and proceed to edit cart', async function () {
+  checkoutPage = new CheckoutPage(getPage());
+  await checkoutPage.gotoCheckout();
 });

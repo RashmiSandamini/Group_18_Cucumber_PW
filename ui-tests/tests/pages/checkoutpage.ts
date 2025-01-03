@@ -1,6 +1,6 @@
-import BasePage from "./basepage";
-import { Page } from "playwright";
-import * as locs from "../locators/checkoutpage.json";
+import BasePage from './basepage';
+import { Page } from 'playwright';
+import * as locs from '../locators/checkoutpage.json';
 
 export default class CheckoutPage extends BasePage {
   constructor(page: Page) {
@@ -16,7 +16,7 @@ export default class CheckoutPage extends BasePage {
   }
 
   async enterData(data: { [key: string]: string }) {
-    await this.getLocator(locs.newAddressArea).waitFor({ state: "visible" });
+    await this.getLocator(locs.newAddressArea).waitFor({ state: 'visible' });
 
     await this.enter(locs.firstName, data.firstname);
     await this.enter(locs.lastName, data.lastname);
@@ -31,5 +31,11 @@ export default class CheckoutPage extends BasePage {
   async continueCheckout() {
     await this.click(locs.termsCheckbox);
     await this.click(locs.continueCheckoutButton);
+  }
+
+  async gotoCheckout() {
+    await this.click(locs.cartButton);
+    await this.getLocator(locs.cartSideDrawer).waitFor({ state: 'visible' });
+    await this.click(locs.editCartButton);
   }
 }

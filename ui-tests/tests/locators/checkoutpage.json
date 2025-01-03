@@ -1,5 +1,5 @@
 {
-  "path": "/index.php?route=checkout/cart",
+  "path": "/index.php?route=checkout/checkout",
   "continueShoppingButton": {
     "locatorOptions": {},
     "locator": "xpath=//a[contains(text(),'Continue Shopping')]",
@@ -54,5 +54,20 @@
     "locatorOptions": {},
     "locator": "xpath=//button[@id='button-save']",
     "description": "Continue button"
+  },
+  "cartButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//div[@id='entry_217825']//a",
+    "description": "View cart button"
+  },
+  "cartSideDrawer": {
+    "locatorOptions": {},
+    "locator": "xpath=//div[@id='cart-total-drawer' and @class='mz-pure-drawer d-flex flex-column active']",
+    "description": "Cart side drawer"
+  },
+  "editCartButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//a[contains(.,'Edit cart') and @role='button']",
+    "description": "Proceed to edit cart button"
   }
 }

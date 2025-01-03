@@ -3,26 +3,25 @@ import * as locs from '../locators/productcategorypage.json';
 import { Page } from 'playwright';
 
 export default class ProductCategoryPage extends BasePage {
-
   constructor(page: Page) {
     super(page, locs.path);
   }
-  async gotoScannersPage(){
-      await this.click(locs.shopByCategoryButton,true);
-      await this.click(locs.printersAndScannersLink,true);  
+  async gotoScannersPage() {
+    await this.click(locs.shopByCategoryButton, true);
+    await this.click(locs.printersAndScannersLink, true);
   }
 
-  async addToWishlist(){
-      await this.click(locs.addToWishlistBtn);
-      await this.click(locs.viewWishlistBtn);   
+  async addToWishlist() {
+    await this.click(locs.addToWishlistBtn);
+    await this.click(locs.viewWishlistBtn);
   }
 
-  async viewSuccessMessage(){
+  async viewSuccessMessage() {
     const successMessage = await this.page.isVisible(locs.successMessage.text);
   }
 
   // out of stock bug test
-  async addTocart(){
+  async addTocart() {
     const product = await this.page.locator('//*[@id="entry_212408"]/div/div[2]');
     await product.hover();
     await this.click(locs.addToCart);
@@ -34,6 +33,11 @@ export default class ProductCategoryPage extends BasePage {
     const countText = await countElement.innerText();
     return countText;
   }
-  
+
+  async addHTCTocart() {
+    await this.page.waitForLoadState('domcontentloaded');
+    await this.page.locator(locs.itemHTC.locator);
+    await this.hover(locs.itemHTC);
+    await this.click(locs.addToCartItemHTC);
+  }
 }
-  

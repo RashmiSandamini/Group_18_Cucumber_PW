@@ -6,13 +6,15 @@ Feature: Checkout functionality
 
   Background:
     Given I am logged in as a valid user
-    And I am on the account page
-    And I have items in the cart
+    And I should be on the home page
 
   Scenario: Successfully checkout a cart 
-    When I click the cart button
-    And proceed to checkout
-    And I should be in the checkout page
+    And I add an item to the cart
+    When I click the cart button and proceed to edit cart
+    And I should be on the shopping cart page 
+    And Items in the cart are not out-of-stock
+    And I click the checkout button
+    And I should be on the checkout page
     And I click on "I want to use a new address" radio button
     And I enter the following details
       | firstname | lastname  | company | address_1   | city      | postcode  | 
@@ -20,6 +22,6 @@ Feature: Checkout functionality
     And I click on continue button
     Then I should be in the confirm order page
     And I confirm the order
-    Then I should be in the order success page
+    And I should be on the order success page
     And I click on continue button in success page
-    Then I should be redirected to the home page
+    And I should be navigated to the home page
