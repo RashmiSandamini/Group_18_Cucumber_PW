@@ -11,7 +11,7 @@ let productCategoryPage: ProductCategory;
 let wishlistPage: WishlistPage;
 let outofstockproductPage: OutOfStockProductPage;
 
-When('I navigate to a Headphones category',async function () {
+When('I navigate to a Printers and Scanners category',async function () {
     productCategoryPage = new ProductCategory(getPage());
     await productCategoryPage.navigate();
 });
