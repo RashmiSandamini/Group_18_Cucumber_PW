@@ -17,7 +17,7 @@
     "description": "Post comment button"
   },
   "replyButton": {
-    "locator": "//li[@id='comment1709']//a[@class='reply'][normalize-space()='Reply']",
+    "locator": "//li[@id='comment1727']//a[@class='reply'][normalize-space()='Reply']",
     "description": "Reply button for a specific comment"
   },
   "postReplyButton": {
