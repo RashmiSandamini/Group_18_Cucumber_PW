@@ -1,31 +1,27 @@
 {
   "path": "/blog",
-  "blogPostLink": {
-    "locator": "xpath=//a[contains(text(), '${title}')]",
-    "description": "Blog post link"
+  "blogNavLink": {
+    "locator": "//ul[@class='navbar-nav horizontal']//span[@class='title'][normalize-space()='Blog']",
+    "description": "Blog navigation link in header"
   },
-  "blogMenu": {
-    "locator": "xpath=//ul[@class='navbar-nav horizontal']//span[@class='title'][normalize-space()='Blog']",
-    "description": "Blog menu item in the navigation bar"
+  "firstBlogPost": {
+    "locator": "(//div[contains(@class, 'article-thumb')])[1]",
+    "description": "First blog post container"
   },
-  "commentInput": {
-    "locator": "xpath=//textarea[@id='comment']",
-    "description": "Comment input field"
+  "commentTextarea": {
+    "locator": "//textarea[@id='input-comment']",
+    "description": "Comment input textarea"
   },
-  "submitCommentButton": {
-    "locator": "xpath=//button[@id='submit-comment']",
-    "description": "Submit comment button"
+  "postCommentButton": {
+    "locator": "//button[@id='button-comment']",
+    "description": "Post comment button"
   },
   "replyButton": {
-    "locator": "xpath=//button[contains(@class, 'reply')]",
-    "description": "Reply button"
+    "locator": "//li[@id='comment1709']//a[@class='reply'][normalize-space()='Reply']",
+    "description": "Reply button for a specific comment"
   },
-  "replyInput": {
-    "locator": "xpath=//textarea[@id='reply']",
-    "description": "Reply input field"
-  },
-  "submitReplyButton": {
-    "locator": "xpath=//button[@id='submit-reply']",
-    "description": "Submit reply button"
+  "postReplyButton": {
+    "locator": "//button[contains(text(), 'Post comment')]",
+    "description": "Button to post a reply"
   }
 }
