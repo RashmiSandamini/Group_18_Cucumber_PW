@@ -1,0 +1,83 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Fri Jan 03 14:05:32 GMT 2025","Fri Jan 03 14:05:41 GMT 2025","8484","","","","","","User tries to add an ""Out of Stock"" product to the cart from the product list page","As a user  
+  I want to be prevented from adding out-of-stock products to the cart  
+  So that I do not mistakenly purchase unavailable items"
+"failed","Fri Jan 03 14:05:32 GMT 2025","Fri Jan 03 14:05:32 GMT 2025","136","","","","","","Update a book with an empty author name","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Fri Jan 03 14:06:17 GMT 2025","Fri Jan 03 14:06:22 GMT 2025","4596","","","","","","Successfully initiate a product return","As a user
+  I want to initiate a product return using the UI
+  So that the return is processed by the system"
+"failed","Fri Jan 03 14:05:32 GMT 2025","Fri Jan 03 14:05:32 GMT 2025","144","","","","","","Update a non-existing book ID with a duplicate book title","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Fri Jan 03 14:05:31 GMT 2025","Fri Jan 03 14:05:32 GMT 2025","220","","","","","","Update the book with user level credentials","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Fri Jan 03 14:06:14 GMT 2025","Fri Jan 03 14:06:17 GMT 2025","2833","","","","","","Successful registration with dynamic email","As a new user
+  I want to register an account
+  So that I can log in and use the platform"
+"passed","Fri Jan 03 14:05:41 GMT 2025","Fri Jan 03 14:05:51 GMT 2025","10533","","","","","","Add a product to the cart and verify in the shopping cart","I want to add a product to the cart,
+  Verify the product is displayed in the shopping cart,
+  And navigate back to the homepage,
+  So that I can confirm the cart and navigation functionality work as expected."
+"failed","Fri Jan 03 14:05:30 GMT 2025","Fri Jan 03 14:05:30 GMT 2025","143","","","","","","Retrieve a specific book by ID","As an admin
+  I want to retrieve books using the API
+  So that I can view details of all books or a specific book"
+"passed","Fri Jan 03 14:05:51 GMT 2025","Fri Jan 03 14:06:14 GMT 2025","22991","","","","","","Successfully checkout a cart","As a user
+  I want to complete the checkout process
+  So that I can purchase items in my cart"
+"failed","Fri Jan 03 14:05:31 GMT 2025","Fri Jan 03 14:05:31 GMT 2025","108","","","","","","Create a book with numbers in the author field","As an admin
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Fri Jan 03 14:05:31 GMT 2025","Fri Jan 03 14:05:31 GMT 2025","100","","","","","","Insert the same book multiple times","As an admin
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"failed","Fri Jan 03 14:05:30 GMT 2025","Fri Jan 03 14:05:30 GMT 2025","88","","","","","","Retrieve a book by ID","As a user
+  I want to retrieve books using the API
+  So that I can view details of a specific book"
+"failed","Fri Jan 03 14:05:29 GMT 2025","Fri Jan 03 14:05:30 GMT 2025","739","","","","","","Retrieve all books","As an admin
+  I want to retrieve books using the API
+  So that I can view details of all books or a specific book"
+"failed","Fri Jan 03 14:05:30 GMT 2025","Fri Jan 03 14:05:31 GMT 2025","106","","","","","","Create a book without a title","As an admin
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Fri Jan 03 14:05:31 GMT 2025","Fri Jan 03 14:05:31 GMT 2025","21","","","","","","Attempt to create a book without being logged in","As a guest user
+  I should not be able to create a new book using the API
+  So that only authorized users can create books"
+"passed","Fri Jan 03 14:05:32 GMT 2025","Fri Jan 03 14:05:32 GMT 2025","145","","","","","","Successfully update an existing book","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"failed","Fri Jan 03 14:05:32 GMT 2025","Fri Jan 03 14:05:32 GMT 2025","134","","","","","","Update a book with an author name containing not only letters(when numbers and symbols are also there)","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"failed","Fri Jan 03 14:05:32 GMT 2025","Fri Jan 03 14:05:32 GMT 2025","156","","","","","","Non-logged-in user access","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Fri Jan 03 14:05:31 GMT 2025","Fri Jan 03 14:05:31 GMT 2025","193","","","","","","Update a non-existing book ID","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"failed","Fri Jan 03 14:05:31 GMT 2025","Fri Jan 03 14:05:31 GMT 2025","89","","","","","","Create a book without an author","As an admin
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Fri Jan 03 14:05:31 GMT 2025","Fri Jan 03 14:05:31 GMT 2025","138","","","","","","Update a book with existing book title","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"passed","Fri Jan 03 14:05:31 GMT 2025","Fri Jan 03 14:05:31 GMT 2025","92","","","","","","Create a book with user level credentials","As a user
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Fri Jan 03 14:06:22 GMT 2025","Fri Jan 03 14:06:28 GMT 2025","6219","","","","","","Add a single product to the wishlist","As a user,
+    I want to add products to my wishlist 
+    so I can review them later."
+"passed","Fri Jan 03 14:05:30 GMT 2025","Fri Jan 03 14:05:30 GMT 2025","114","","","","","","Successfully create a new book","As an admin
+  I want to create a new book using the API
+  So that the book is stored in the system"
+"passed","Fri Jan 03 14:05:30 GMT 2025","Fri Jan 03 14:05:30 GMT 2025","147","","","","","","Retrieve a non-existent book by ID","As an admin
+  I want to retrieve books using the API
+  So that I can view details of all books or a specific book"
+"failed","Fri Jan 03 14:05:32 GMT 2025","Fri Jan 03 14:05:32 GMT 2025","161","","","","","","Update a book with book title containing leading and trailing whitespaces but an existing book title","As a user 
+I want to update a book using API
+So that the updated book is stored in the system"
+"failed","Fri Jan 03 14:05:31 GMT 2025","Fri Jan 03 14:05:31 GMT 2025","95","","","","","","Create a book with whitespace titles","As an admin
+  I want to create a new book using the API
+  So that the book is stored in the system"
