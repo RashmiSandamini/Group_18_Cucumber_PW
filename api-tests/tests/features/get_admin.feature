@@ -17,6 +17,11 @@ Feature: Retrieve Books as Admin
       """
       [
         {
+          "id": 1,
+          "title": "Sample Book",
+          "author": "Sample Author"
+        },
+        {
           "id": 2,
           "title": "To Kill A Mocking Bird",
           "author": "Harper Lee"
