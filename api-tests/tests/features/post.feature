@@ -78,7 +78,7 @@ Feature: Create a new book
 
   @204159E
   Scenario: Attempt to create a book without being logged in
-    Given I am not logged in as an admin or user
+    And I am not logged in as an admin or user
     When I send a POST request to "/api/books" with the following book details
       | title           | author         |
       | How Do You Live 3 | Yoshino Uthada |
