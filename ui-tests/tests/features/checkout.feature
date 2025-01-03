@@ -8,6 +8,7 @@ Feature: Checkout functionality
     Given I am logged in as a valid user
     And I should be on the home page
 
+  @205124C
   Scenario: Successfully checkout a cart 
     And I add an item to the cart
     When I click the cart button and proceed to edit cart
