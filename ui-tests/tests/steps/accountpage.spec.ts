@@ -5,8 +5,7 @@ import AccountPage from '../pages/accountpage';
 
 let accountPage: AccountPage;
 
-
-Then('I am on the account page', async function () {  
+Then('I am on the account page', async function () {
   accountPage = new AccountPage(getPage());
   expect(await accountPage.inPage()).toBeTruthy();
 });

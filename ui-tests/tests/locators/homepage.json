@@ -4,6 +4,10 @@
     "locatorOptions": {},
     "locator": "xpath=//a[contains(., 'My account') and @data-toggle]",
     "description": "My account link"
+  },
+  "productToAdd": {
+    "locatorOptions": {},
+    "locator": "xpath=//div[@id='swiper-wrapper-76f6b10595ff86ed2']//div[@class='swiper-slide' and @aria-label='4 / 10']",
+    "description": "Product link to hover"
   }
 }
- 

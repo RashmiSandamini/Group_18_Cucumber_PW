@@ -60,5 +60,17 @@
     "locatorOptions": {},
     "locator": "xpath=//*[@id='entry_217825']/a/div[1]/span",
     "description": "Cart item count"
+  },
+
+  "itemHTC": {
+    "locatorOptions": {},
+    "locator": "xpath=//div[@id='entry_212408']/div/div[1]",
+    "description": "HTC Touch HD Item"
+  },
+
+  "addToCartItemHTC": {
+    "locatorOptions": {},
+    "locator": "xpath=//div[@id='entry_212408']/div/div[1]/div/div/div[2]/button[1]",
+    "description": "Add HTC Touch HD to the cart"
   }
 }

@@ -1,0 +1,8 @@
+{
+  "path": "/index.php?route=extension/maza/checkout/confirm",
+  "confirmOrderButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//button[@id='button-confirm']",
+    "description": "Confirm Order Button"
+  }
+}

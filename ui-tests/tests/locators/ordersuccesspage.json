@@ -1,0 +1,8 @@
+{
+  "path": "/index.php?route=checkout/success",
+  "continueButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//a[contains(.,'Continue') and @class = 'btn btn-primary']",
+    "description": "Continue Button"
+  }
+}
