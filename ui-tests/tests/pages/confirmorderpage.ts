@@ -1,20 +1,15 @@
-import { Page } from "playwright/test";
-import BasePage from "./basepage";
-import * as locs from "../locators/confirmorderpage.json";
+import { Page } from 'playwright/test';
+import BasePage from './basepage';
+import * as locs from '../locators/confirmorderpage.json';
 
 export class ConfirmOrderPage extends BasePage {
   constructor(page: Page) {
     super(page, locs.path);
   }
 
-  async verifyOnConfirmPage() {
-    await this.inPage();
-    await this.page.waitForTimeout(5000);
-  }
-
   async confirmOrder() {
     await this.getLocator(locs.confirmOrderButton).waitFor({
-      state: "visible",
+      state: 'visible',
     });
     await this.click(locs.confirmOrderButton);
   }

@@ -69,5 +69,10 @@
     "locatorOptions": {},
     "locator": "xpath=//a[contains(.,'Edit cart') and @role='button']",
     "description": "Proceed to edit cart button"
+  },
+  "proceedToCheckout": {
+    "locatorOptions": {},
+    "locator": "xpath=//a[contains(.,'Checkout') and @role='button']",
+    "description": "Proceed to checkout"
   }
 }

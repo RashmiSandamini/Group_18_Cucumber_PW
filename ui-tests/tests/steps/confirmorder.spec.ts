@@ -5,9 +5,8 @@ import { expect } from '@playwright/test';
 
 let confirmOrderPage: ConfirmOrderPage;
 
-Then('I should be in the confirm order page', async function () {
+Then('I should be on the confirm order page', async function () {
   confirmOrderPage = new ConfirmOrderPage(getPage());
-  // await confirmOrderPage.verifyOnConfirmPage();
   expect(await confirmOrderPage.inPage()).toBeTruthy();
 });
 

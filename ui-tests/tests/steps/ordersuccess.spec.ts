@@ -7,7 +7,6 @@ let orderSuccessPage: OrderSuccessPage;
 
 Then('I should be on the order success page', async function () {
   orderSuccessPage = new OrderSuccessPage(getPage());
-  // await orderSuccessPage.verifyOrderSuccessPage();
   expect(await orderSuccessPage.inPage()).toBeTruthy();
 });
 

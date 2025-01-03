@@ -94,8 +94,8 @@ export default class BasePage {
   }
 
   async inPage() {
+    await this.page.waitForTimeout(5000);
     await this.page.waitForLoadState('domcontentloaded');
-    console.log(this.page.url());
     return this.page.url().endsWith(this.path);
   }
 

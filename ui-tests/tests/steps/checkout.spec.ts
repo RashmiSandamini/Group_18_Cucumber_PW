@@ -27,3 +27,8 @@ When('I click the cart button and proceed to edit cart', async function () {
   checkoutPage = new CheckoutPage(getPage());
   await checkoutPage.gotoCheckout();
 });
+
+When('I click the cart button and proceed to checkout', async function () {
+  checkoutPage = new CheckoutPage(getPage());
+  await checkoutPage.gotoCheckout();
+});

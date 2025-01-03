@@ -20,11 +20,12 @@ Then('I should be able to click the ContinueShopping button', async function () 
   await shoppingCartPage.clickContinuetoHome();
 });
 
-Then('Items in the cart are not out-of-stock', async function () {
-  shoppingCartPage = new ShoppingCartPage(getPage());
-  await shoppingCartPage.removeOutofStockItems();
-});
-
 Then('I click the checkout button', async function () {
   await shoppingCartPage.clickCheckoutButton();
+});
+
+Then('The shopping cart is empty', async function () {
+  shoppingCartPage = new ShoppingCartPage(getPage());
+  await shoppingCartPage.navigate();
+  await shoppingCartPage.removeCartItems();
 });

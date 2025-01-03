@@ -26,29 +26,29 @@ export default class ShoppingCartPage extends BasePage {
     await this.click(locs.continueBtn);
   }
 
-  async removeOutofStockItems() {
-    let rows = await this.page.$$(locs.shoppingCartTableItems.locator);
+  async clickCheckoutButton() {
+    await this.click(locs.checkoutBtn);
+  }
 
-    for (let i = 0; i < rows.length; i++) {
-      const row = rows[i];
-      const outOfStockItem = await row.$(locs.outOfStockIndicator.locator);
+  async removeCartItems() {
+    const isTableVisible = await this.page.isVisible(locs.cartTable.locator);
 
-      if (outOfStockItem) {
+    if (isTableVisible) {
+      let rows = await this.page.$$(locs.shoppingCartTableItems.locator);
+      for (let i = 0; i < rows.length; i++) {
+        const row = rows[i];
         const removeButton = await row.$(locs.removeButton.locator);
 
         if (removeButton) {
           await Promise.all([removeButton.click(), this.page.waitForTimeout(3000)]);
-          await this.page.waitForSelector(locs.shoppingCartTableItems.locator, {
-            state: 'attached',
-          });
+          const tableStillVisible = await this.page.isVisible(locs.cartTable.locator);
+          if (!tableStillVisible) {
+            break;
+          }
           rows = await this.page.$$(locs.shoppingCartTableItems.locator);
           i--;
         }
       }
     }
-  }
-
-  async clickCheckoutButton() {
-    await this.click(locs.checkoutBtn);
   }
 }
