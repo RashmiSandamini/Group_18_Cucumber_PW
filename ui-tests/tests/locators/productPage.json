@@ -1,0 +1,13 @@
+{
+    "path": "/index.php?route=product%2Fsearch&search=MacBook",
+        "addToCartButton": {
+        "locatorOptions": {},
+        "locator":"xpath=//button[@class='btn btn-cart cart-43']//i[@class='fas fa-shopping-cart']",
+        "description": "Add to Cart button for the first product"
+        },
+        "viewCartButton": {
+        "locatorOptions": {},
+        "locator": "xpath=//a[@class='btn btn-primary btn-block']",
+        "description": "View Cart button"
+        }
+}

@@ -1,0 +1,18 @@
+{
+  "path": "/index.php?route=account/login",
+  "emailInput": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@id='input-email']",
+    "description": "Email input field"
+  }, 
+  "passwordInput": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@id='input-password']",
+    "description": "Password input field"
+  },
+  "loginButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@value='Login']",
+    "description": "Login button"
+  }
+}

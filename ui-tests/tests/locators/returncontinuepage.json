@@ -1,0 +1,10 @@
+{
+  "path": "/index.php?route=account/return/success",
+  "continueBtn": {
+    "locatorOptions": {
+      "name": "Continue"
+    },
+    "locator": "link",
+    "description": "Continue button"
+  }
+}

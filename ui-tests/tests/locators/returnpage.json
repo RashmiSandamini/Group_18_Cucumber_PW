@@ -1,0 +1,48 @@
+{
+  "path": "/index.php?route=account/return/add",
+  "orderIdInput": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@id='input-order-id']",
+    "description": "Order ID input field"
+  }, 
+  "orderDateInput": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@id='input-date-ordered']",
+    "description": "Order date input field"
+  }, 
+  "productNameInput": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@id='input-product']",
+    "description": "Produce name input field"
+  }, 
+  "productCodeInput": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@id='input-model']",
+    "description": "Product model input field"
+  }, 
+  "qtyInput": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@id='input-quantity']",
+    "description": "Product quantity input field"
+  }, 
+  "reasonForReturnInput": {
+    "locatorOptions": {},
+    "locator": "//input[@name='return_reason_id' and @value='${value}' and contains(@class, 'form-check-input')]",
+    "description": "Reason for return input radio button"
+  },
+  "productIsOpenedInput": {
+    "locatorOptions": {},
+    "locator": "//input[@name='opened' and @value='${value}' and contains(@class, 'form-check-input')]",
+    "description": "Product opened or not input radio button"
+  },
+  "otherDetailsInput": {
+    "locatorOptions": {},
+    "locator": "xpath=//textarea[@id='input-comment']",
+    "description": "Other comments input field"
+  },
+  "submitReturnButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@type='submit' and @value='Submit']",
+    "description": "Submit return button"
+  }
+}

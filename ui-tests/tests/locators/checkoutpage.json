@@ -1,0 +1,78 @@
+{
+  "path": "/index.php?route=checkout/checkout",
+  "continueShoppingButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//a[contains(text(),'Continue Shopping')]",
+    "description": "Continue Shopping button"
+  },
+  "newAddressRadioButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//label[@for='input-payment-address-new']",
+    "description": "New address radio button"
+  },
+  "newAddressArea": {
+    "locatorOptions": {},
+    "locator": "xpath=//div[@id='payment-new']",
+    "description": "New address area"
+  },
+  "firstName": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@id='input-payment-firstname']",
+    "description": "First name input field"
+  },
+  "lastName": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@id='input-payment-lastname']",
+    "description": "Last name input field"
+  },
+  "company": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@id='input-payment-company']",
+    "description": "Company input field"
+  },
+  "address1": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@id='input-payment-address-1']",
+    "description": "Adress1 input field"
+  },
+  "city": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@id='input-payment-city']",
+    "description": "City input field"
+  },
+  "postcode": {
+    "locatorOptions": {},
+    "locator": "xpath=//input[@id='input-payment-postcode']",
+    "description": "Postcode input field"
+  },
+  "termsCheckbox": {
+    "locatorOptions": {},
+    "locator": "xpath=//label[@for='input-agree']",
+    "description": "Terms and conditions checkbox"
+  },
+  "continueCheckoutButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//button[@id='button-save']",
+    "description": "Continue button"
+  },
+  "cartButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//div[@id='entry_217825']//a",
+    "description": "View cart button"
+  },
+  "cartSideDrawer": {
+    "locatorOptions": {},
+    "locator": "xpath=//div[@id='cart-total-drawer' and @class='mz-pure-drawer d-flex flex-column active']",
+    "description": "Cart side drawer"
+  },
+  "editCartButton": {
+    "locatorOptions": {},
+    "locator": "xpath=//a[contains(.,'Edit cart') and @role='button']",
+    "description": "Proceed to edit cart button"
+  },
+  "proceedToCheckout": {
+    "locatorOptions": {},
+    "locator": "xpath=//a[contains(.,'Checkout') and @role='button']",
+    "description": "Proceed to checkout"
+  }
+}

@@ -1,0 +1,13 @@
+{
+    "path": "/index.php?route=account/success",
+    "successMessage":{
+        "locatorOptions": {},
+        "locator": "xpath=//*[@id='content']/h1",
+        "description": "Success Message"
+    },
+    "continueButton": {
+        "locatorOptions": {},
+        "locator": "xpath=//*[@id='content']/div/a",
+        "description": "Continue Button"
+    }
+  }

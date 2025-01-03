@@ -1,0 +1,87 @@
+name: End-to-End Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+env:
+  API_URL: "http://localhost:7081"
+  WEB_URL: "https://ecommerce-playground.lambdatest.io"
+  WEB_USER_EMAIL: "dummy1234@gmail.com"
+  WEB_USER_PASSWORD: "dummy1234@gmail.com"
+  HEADLESS: "true"
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'corretto'
+
+    - name: Start API server
+      run: |
+        nohup java -jar api/demo-0.0.1-SNAPSHOT.jar &
+        sleep 10
+
+    - name: Run tests
+      run: |
+        npm install
+        npm test
+      continue-on-error: true
+
+    - name: Set environment properties
+      if: always()
+      run: |
+        echo "EVENT=${{ github.event_name }}" >> allure-results/environment.properties
+        if [ "${{ github.event_name }}" == "pull_request" ]; then
+          echo "PULL_REQUEST=https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }}" >> allure-results/environment.properties
+        fi
+        echo "ATTEMPT=$GITHUB_RUN_ATTEMPT" >> allure-results/environment.properties
+        echo "COMMIT=https://github.com/${{ github.repository }}/commits/$(git rev-parse --short ${{ github.event.pull_request.head.sha }})" >> allure-results/environment.properties
+
+    - name: Load test report history
+      uses: actions/checkout@v3
+      if: always()
+      continue-on-error: true
+      with:
+        ref: gh-pages
+        path: gh-pages
+
+    - name: Build test report
+      uses: simple-elf/allure-report-action@v1.7
+      if: always()
+      with:
+        gh_pages: gh-pages
+        allure_history: allure-history
+        allure_results: allure-results
+
+    - name: Publish test report
+      uses: peaceiris/actions-gh-pages@v3
+      if: always()
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: allure-history
+
+    - name: Comment on PR with test results link
+      if: always() && github.event_name == 'pull_request'
+      run: |
+        COMMIT=$(git rev-parse --short ${{ github.event.pull_request.head.sha }})
+        COMMENT="### Workflow Information\nAttempt: ${{ github.run_attempt }}\nLast Commit: [\`$COMMIT\`](https://github.com/${{ github.repository }}/commits/$COMMIT)\nResults: [\`https://rashmisandamini.github.io/Group_18_Cucumber_PW/${{ github.run_number }}\`](https://rashmisandamini.github.io/Group_18_Cucumber_PW/${{ github.run_number }})"
+        
+        PR_URL="https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments"
+        
+        curl -X POST $PR_URL \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -d "{\"body\": \"$COMMENT\"}"
+        echo "Comment posted successfully."

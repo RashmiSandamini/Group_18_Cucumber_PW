@@ -1,0 +1,38 @@
+{
+  "path": "/index.php?route=checkout/cart",
+  "continueBtn": {
+    "locatorOptions": {},
+    "locator": "//a[@class='btn btn-lg btn-secondary mr-auto']",
+    "description": "Continue button"
+  },
+  "productInCart": {
+    "locatorOptions": {},
+    "locator": "//td[@class='text-left']//a[contains(text(),'MacBook')]",
+    "description": "Product name"
+  },
+  "shoppingCartTableItems": {
+    "locatorOptions": {},
+    "locator": "xpath=//table[@class='table table-bordered']//tbody/tr",
+    "description": "Shopping Cart Table Items"
+  },
+  "outOfStockIndicator": {
+    "locatorOptions": {},
+    "locator": "xpath=.//span[contains(@class, 'text-danger')]",
+    "description": "Red star indicator for out-of-stock items"
+  },
+  "removeButton": {
+    "locatorOptions": {},
+    "locator": "xpath=.//td//button[contains(@class, 'btn-danger')]",
+    "description": "Remove button for the corresponding item row"
+  },
+  "checkoutBtn": {
+    "locatorOptions": {},
+    "locator": "//div[@id='content']/div/a[contains(.,'Checkout')]",
+    "description": "Checkout button"
+  },
+  "cartTable": {
+    "locatorOptions": {},
+    "locator": "//table[@class='table table-bordered']",
+    "description": "cart table"
+  }
+}
