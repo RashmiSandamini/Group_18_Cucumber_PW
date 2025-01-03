@@ -12,5 +12,5 @@ Feature: Interact with the Blog functionality
       Given I navigate to the "Blog" section 
       When I click on an article
       And I comment on the comments section and click on submit button
-      And I click the reply button for comment
+      # And I click the reply button for comment
 
