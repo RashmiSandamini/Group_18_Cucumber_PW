@@ -119,6 +119,11 @@ Authorization: Basic dXNlcjpwYXNzd29yZA==
             "author": "James Clear"
 }
 
+###
+DELETE {{rootUrl}}/api/books/2
+Content-Type: application/json
+
+
 
 ### Update a Book Admin
 PUT {{rootUrl}}/api/books/2
